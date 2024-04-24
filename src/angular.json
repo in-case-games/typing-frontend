@@ -1,0 +1,33 @@
+{
+	"version": 1,
+	"projects": {
+	  "in-case-typing": {
+		"projectType": "application",
+		"root": "",
+		"sourceRoot": "src",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:browser",
+			"options": {
+			  "outputPath": "dist/in-case-typing",
+			  "index": "src/index.html",
+			  "main": "src/main.ts",
+			  "polyfills": ["zone.js"],
+			  "tsConfig": "tsconfig.json",
+			  "aot": true
+			}
+		  },
+		  "serve": {
+			"builder": "@angular-devkit/build-angular:dev-server",
+			"options": {
+			  "buildTarget": "in-case-typing:build",
+			  "port": 3000
+			}
+		  }
+		}
+	  }
+  },
+  "cli": {
+    "analytics": "fde994af-cf36-49f5-9239-11b9e094a390"
+  }
+}
