@@ -5,8 +5,16 @@ import { FormsModule } from "@angular/forms"
     selector: "root",
     standalone: true,
     imports: [FormsModule],
-    template: `<h1>Добро пожаловать, здесь будет Typing InCase</h1>`
+    templateUrl: `./app.component.html`,
+    styleUrls: [ './app.component.css' ]
 })
-export class AppComponent { 
-    name= "";
+
+export class AppComponent {
+    displayInputText= "";
+
+    setFocusInputText() : void 
+    {
+        var input = document.getElementById('typing-input-text');
+        input.focus();
+    }
 }

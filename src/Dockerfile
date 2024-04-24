@@ -19,7 +19,7 @@ COPY . /app
 # RUN ng test --watch=false
 # RUN ng e2e --port 4202
 
-RUN ng build --output-path=dist
+RUN ng build --output-path=dist --configuration production
 
 FROM nginx:1.25.3
 COPY --from=build /app/dist /usr/share/nginx/html
