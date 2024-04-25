@@ -1,0 +1,16 @@
+html {
+  background-color: var(--main-background-color);
+  color: var(--main-font-color);
+  font-family: var(--main-font-font);
+  overflow-x: hidden;
+  user-select: none;
+}
+
+main {
+  margin-top: 80px;
+  flex: 1 0 auto;
+}
+
+header footer {
+  flex: 0 0 auto;
+}

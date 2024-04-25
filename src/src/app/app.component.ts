@@ -1,20 +1,15 @@
 import { Component } from "@angular/core"
 import { FormsModule } from "@angular/forms"
+import { HiddenTypingInputComponent } from "./components/common/inputs/hidden-typing-input/hidden-typing-input.component"
      
 @Component({
     selector: "root",
     standalone: true,
-    imports: [FormsModule],
+    imports: [ HiddenTypingInputComponent, FormsModule ],
     templateUrl: `./app.component.html`,
-    styleUrls: [ './app.component.css' ]
+    styleUrls: [ './app.component.scss' ]
 })
 
 export class AppComponent {
-    displayInputText= "";
-
-    setFocusInputText() : void 
-    {
-        var input = document.getElementById('typing-input-text');
-        input.focus();
-    }
+    public text: string;
 }

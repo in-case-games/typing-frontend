@@ -9,39 +9,48 @@
 		  "build": {
 			"builder": "@angular-devkit/build-angular:browser",
 			"options": {
-			  "outputPath": "dist/in-case-typing",
-			  "index": "src/index.html",
-			  "main": "src/main.ts",
-			  "polyfills": ["zone.js"],
-			  "tsConfig": "tsconfig.json",
-			  "aot": true
+				"outputPath": "dist/in-case-typing",
+				"index": "src/index.html",
+				"main": "src/main.ts",
+				"polyfills": [ "zone.js" ],
+				"assets": [
+					"src/favicon.ico"
+				],
+				"styles": [ 
+					"src/assets/styles/zeroing.css",
+					"src/assets/styles/fonts.css",
+					"src/assets/styles/constants.css",
+					"src/assets/styles/styles.css"
+				],
+				"tsConfig": "tsconfig.json",
+				"aot": true
 			},
 			"configurations": {
 				"production": {
-				  "optimization": true,
-				  "outputHashing": "all",
-				  "sourceMap": false,
-				  "namedChunks": false,
-				  "vendorChunk": false,
-				  "buildOptimizer": true
+					"optimization": true,
+					"outputHashing": "all",
+					"sourceMap": false,
+					"namedChunks": false,
+					"vendorChunk": false,
+					"buildOptimizer": true
 				},
 				"development": {
-				  "optimization": false,
-				  "sourceMap": true
+					"optimization": false,
+					"sourceMap": true
 				}
 			}
 		  },
 		  "serve": {
 			"builder": "@angular-devkit/build-angular:dev-server",
 			"options": {
-			  "buildTarget": "in-case-typing:build",
-			  "port": 3000
+				"buildTarget": "in-case-typing:build",
+				"port": 3000
 			}
 		  }
 		}
 	  }
   },
   "cli": {
-    "analytics": "fde994af-cf36-49f5-9239-11b9e094a390"
+	"analytics": "fde994af-cf36-49f5-9239-11b9e094a390"
   }
 }

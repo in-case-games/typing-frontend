@@ -1,2 +1,2 @@
-<h1 (mouseenter)="setFocusInputText()">{{displayInputText}}</h1>
-<input id="typing-input-text" autofocus type="text" [(ngModel)]="displayInputText" (focusout)="setFocusInputText()"/>
+<h1>{{text}}</h1>
+<hidden-typing-input [(text)]="text"></hidden-typing-input>
