@@ -1,8 +1,9 @@
-<input 
+<input
 	autofocus
-	id="typing-input-text" 
+	id="typing-input-text"
 	type="text"
-	autocomplete="off" 
-	(input)="setText($event)"
+	autocomplete="off"
+	[ngModel]="text"
+	(ngModelChange)="onTextChange($event)"
 	(focusout)="setFocusInputText()"
 />

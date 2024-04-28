@@ -1,15 +1,14 @@
-import { Component } from "@angular/core"
-import { FormsModule } from "@angular/forms"
-import { HiddenTypingInputComponent } from "./components/common/inputs/hidden-typing-input/hidden-typing-input.component"
-     
-@Component({
-    selector: "root",
-    standalone: true,
-    imports: [ HiddenTypingInputComponent, FormsModule ],
-    templateUrl: `./app.component.html`,
-    styleUrls: [ './app.component.scss' ]
-})
+import { NgClass } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from './components/structure/footer/footer.component';
+import { HeaderComponent } from './components/structure/header/header.component';
 
-export class AppComponent {
-    public text: string;
-}
+@Component({
+	selector: 'root',
+	standalone: true,
+	imports: [RouterOutlet, NgClass, HeaderComponent, FooterComponent],
+	templateUrl: `./app.component.html`,
+	styleUrls: ['./app.component.scss'],
+})
+export class AppComponent {}
