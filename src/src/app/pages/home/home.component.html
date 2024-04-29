@@ -3,9 +3,8 @@
 		<div [ngClass]="{ lessons: true }">
 			@for (lesson of lessons; track $index) {
 			<lesson-item
-				routerLink="lesson/$index"
+				routerLink="lesson/{{ $index + 1 }}"
 				[lesson]="lesson"
-				[style.border-color]="lesson.color"
 			></lesson-item>
 			}
 		</div>

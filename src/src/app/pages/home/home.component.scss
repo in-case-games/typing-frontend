@@ -24,19 +24,13 @@
 
 		lesson-item {
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
 			align-items: center;
-			flex-direction: column;
 
-			height: 200px;
-			width: 100px;
+			height: 240px;
+			width: 180px;
 
-			border: 1px solid;
-
-			padding: 10px 30px;
 			margin: 20px;
-
-			cursor: pointer;
 		}
 	}
 }

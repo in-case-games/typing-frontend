@@ -1,4 +1,9 @@
-<div [ngClass]="{ widget: true }">
-	<!-- TODO Сделать виджет -->
+<div
+	[ngClass]="{ lesson_item__wrapper: true }"
+	[style.border-color]="lesson.color"
+>
+	<div [ngClass]="{ widget: true }">
+		<!-- TODO Сделать виджет -->
+	</div>
+	<p [ngClass]="{ theme: true }">{{ lesson.theme }}</p>
 </div>
-<p [ngClass]="{ theme: true }">{{ lesson.theme }}</p>
