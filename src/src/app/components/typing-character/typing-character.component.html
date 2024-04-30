@@ -1,0 +1,11 @@
+<p
+	[ngClass]="{ character: true }"
+	[style.width]="
+		params.separating.char === character.char
+			? 'var(--typing-character-separating-width)'
+			: 'auto'
+	"
+>
+	{{ character.char }}
+</p>
+<div [ngClass]="{ carriage: true }"></div>

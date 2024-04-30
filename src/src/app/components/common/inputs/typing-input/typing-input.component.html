@@ -1,9 +1,7 @@
 <input
-	autofocus
 	id="typing-input-text"
 	type="text"
 	autocomplete="off"
-	[ngModel]="text"
-	(ngModelChange)="onTextChange($event)"
+	(keydown)="onKeydown($event)"
 	(focusout)="setFocusInputText()"
 />

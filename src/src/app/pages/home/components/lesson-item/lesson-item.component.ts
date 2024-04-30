@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { LessonItemModel } from './lesson-item.model';
+import { LessonItemModel } from 'src/app/common/models/lesson-item.model';
 
 @Component({
 	selector: 'lesson-item',
