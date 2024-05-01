@@ -1,0 +1,12 @@
+<div [ngClass]="{ container: true }">
+	<div [ngClass]="{ home__wrapper: true }">
+		<div [ngClass]="{ lessons: true }">
+			@for (lesson of lessons; track $index) {
+			<lesson-item
+				routerLink="lesson/{{ $index + 1 }}"
+				[lesson]="lesson"
+			></lesson-item>
+			}
+		</div>
+	</div>
+</div>

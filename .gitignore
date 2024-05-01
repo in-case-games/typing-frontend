@@ -431,3 +431,4 @@ dist/
 appsetings.Local.json
 src/.angular/*
 src/.angular/
+src/package-lock.json

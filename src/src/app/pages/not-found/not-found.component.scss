@@ -1,0 +1,17 @@
+.container {
+	max-width: 1720px;
+
+	margin: 0 auto;
+	padding: 20px 40px 0 40px;
+}
+
+.not_found__wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	height: 100%;
+	width: 100%;
+}
