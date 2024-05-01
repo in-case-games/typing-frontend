@@ -13,7 +13,10 @@
 
 	--typing-character-font-family: 'RobotoMono, UbuntuMono';
 	--typing-character-font-size: 34px;
+
 	--typing-separating-width: 20px;
+	--typing-separating-height: 70%;
+	--typing-separating-min-height: 40px;
 
 	--typing-character__wait-font-color: #79580b;
 	--typing-character__active-font-color: #79580b;
@@ -21,11 +24,11 @@
 	--typing-character__mistake-font-color: #ffe665;
 	--typing-character__miss-font-color: #f16868;
 
-	--typing-separating__wait-background-color: #79580b;
-	--typing-separating__active-background-color: #79580b;
-	--typing-separating__done-background-color: #f8b415;
-	--typing-separating__mistake-background-color: #ffe665;
-	--typing-separating__miss-background-color: #f16868;
+	--typing-separating__wait-border-bottom: 2px solid #79580b;
+	--typing-separating__active-border-bottom: 2px solid #79580b;
+	--typing-separating__done-border-bottom: 2px solid #f8b415;
+	--typing-separating__mistake-border-bottom: 2px solid #ffe665;
+	--typing-separating__miss-border-bottom: 2px solid #f16868;
 
 	--typing-carriage-width: 2px;
 	--typing-carriage-height: 70%;

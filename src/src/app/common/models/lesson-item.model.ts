@@ -1,4 +1,5 @@
 import { DegreeDifficulty } from '../enums/degree-difficulty.enum';
+import { Language } from '../enums/language.enum';
 import { TypingStatus } from '../enums/typing-status.enum';
 import { LessonParamsModel } from './lesson-params.model';
 import { TypingWordModel } from './typing-word.model';
@@ -8,32 +9,21 @@ export class LessonItemModel {
 	public readonly degreeDifficulty: DegreeDifficulty;
 	public readonly color: string;
 	public readonly params: LessonParamsModel;
+	public readonly language: Language;
 
 	public positionWord: number = 0;
 
-	private _words: TypingWordModel[] = [];
-
-	public get words(): TypingWordModel[] {
-		return this._words;
-	}
-	public set words(w: TypingWordModel[]) {
-		if (
-			w.length >
-			this.params.maxWords * (this.params.separating.length > 0 ? 2 : 1)
-		) {
-			console.log('Превышено количество слов в массиве 1');
-		} else {
-			this._words = w;
-		}
-	}
+	public words: TypingWordModel[] = [];
 
 	constructor(
 		topic: string,
+		language: Language,
 		degreeDifficulty: DegreeDifficulty,
 		params: LessonParamsModel,
 		words: TypingWordModel[] = []
 	) {
 		this.topic = topic;
+		this.language = language;
 		this.degreeDifficulty = degreeDifficulty;
 		this.params = params;
 		this.words = words;
@@ -49,33 +39,29 @@ export class LessonItemModel {
 			return false;
 		}
 
-		let word = this.words[this.positionWord];
-
-		this.words[this.positionWord].chars[word.positionCharacter].Next(
-			$event,
-			this.params
-		);
-		this.words[this.positionWord].positionCharacter += 1;
-
-		if (word.positionCharacter + 1 > word.chars.length) {
-			this.words[this.positionWord].positionCharacter -= 1;
-			this.words[this.positionWord].status = TypingStatus.Done;
-
-			if (
-				this.positionWord + 2 >
-				this.params.maxWords * (this.params.separating.length > 0 ? 2 : 1)
-			) {
-				//end
-				return true;
-			}
-
-			this.positionWord += 1;
-			this.words[this.positionWord].status = TypingStatus.Active;
-			word = this.words[this.positionWord];
+		if (this.positionWord + 1 > this.words.length) {
+			//end
+			return true;
 		}
 
-		this.words[this.positionWord].chars[word.positionCharacter].status =
-			TypingStatus.Active;
+		let word = this.words[this.positionWord];
+		let positionCharacter = word.positionCharacter;
+
+		word.Next($event, this.params);
+
+		if (this.words[this.positionWord].positionCharacter === positionCharacter) {
+			this.positionWord += 1;
+
+			if (this.positionWord + 1 <= this.words.length) {
+				this.words[this.positionWord].status = TypingStatus.Active;
+				word = this.words[this.positionWord];
+			}
+		}
+
+		if (this.positionWord + 1 <= this.words.length) {
+			this.words[this.positionWord].chars[word.positionCharacter].status =
+				TypingStatus.Active;
+		}
 
 		return false;
 	}
@@ -85,7 +71,8 @@ export class LessonItemModel {
 			!$event ||
 			!$event.key ||
 			$event.key !== 'Backspace' ||
-			this.params.ignoreChars.map(e => e.char).indexOf($event.key) > -1
+			this.params.ignoreChars.map(e => e.char).indexOf($event.key) > -1 ||
+			this.positionWord + 1 > this.words.length
 		) {
 			return;
 		}

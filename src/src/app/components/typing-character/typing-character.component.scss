@@ -23,23 +23,24 @@
 	margin: 0;
 	padding: 0;
 	width: var(--typing-separating-width);
-	height: 70%;
+	height: var(--typing-separating-height);
+	min-height: var(--typing-separating-min-height);
 }
 
 .separating__wait {
-	border-bottom: 1px solid var(--typing-separating__wait-background-color);
+	border-bottom: var(--typing-separating__wait-border-bottom);
 }
 .separating__active {
-	border-bottom: 1px solid var(--typing-separating__active-background-color);
+	border-bottom: var(--typing-separating__active-border-bottom);
 }
 .separating__done {
-	border-bottom: 1px solid var(--typing-separating__done-background-color);
+	border-bottom: var(--typing-separating__done-border-bottom);
 }
 .separating__mistake {
-	border-bottom: 1px solid var(--typing-separating__mistake-background-color);
+	border-bottom: var(--typing-separating__mistake-border-bottom);
 }
 .separating__miss {
-	border-bottom: 1px solid var(--typing-separating__miss-background-color);
+	border-bottom: var(--typing-separating__miss-border-bottom);
 }
 .carriage {
 	position: absolute;
@@ -49,4 +50,19 @@
 	height: var(--typing-carriage-height);
 	top: var(--typing-carriage-top);
 	background-color: var(--typing-carriage-background-color);
+	animation-duration: 2s;
+	animation-name: blinking;
+	animation-iteration-count: infinite;
+}
+
+@keyframes blinking {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
