@@ -1,0 +1,17 @@
+.container {
+	max-width: 1720px;
+	height: 100%;
+
+	margin: 0 auto;
+	padding: 0 40px;
+}
+
+.footer__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+
+	height: 100%;
+	width: 100%;
+}

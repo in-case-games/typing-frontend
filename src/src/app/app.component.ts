@@ -1,12 +1,14 @@
-import { Component } from "@angular/core"
-import { FormsModule } from "@angular/forms"
-     
+import { NgClass } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from './components/structure/footer/footer.component';
+import { HeaderComponent } from './components/structure/header/header.component';
+
 @Component({
-    selector: "root",
-    standalone: true,
-    imports: [FormsModule],
-    template: `<h1>Добро пожаловать, здесь будет Typing InCase</h1>`
+	selector: 'root',
+	standalone: true,
+	imports: [RouterOutlet, NgClass, HeaderComponent, FooterComponent],
+	templateUrl: `./app.component.html`,
+	styleUrls: ['./app.component.scss'],
 })
-export class AppComponent { 
-    name= "";
-}
+export class AppComponent {}

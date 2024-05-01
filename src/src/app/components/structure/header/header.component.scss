@@ -1,0 +1,25 @@
+.container {
+	margin: 0 auto;
+	max-width: 1720px;
+	height: 100%;
+	padding: 0 40px;
+}
+
+.header__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	height: 100%;
+	width: 100%;
+
+	a {
+		color: var(--logo-font-color);
+	}
+
+	.header_logo {
+		font-family: var(--logo-font-family);
+		font-size: var(--logo-font-size);
+	}
+}

@@ -1,0 +1,7 @@
+<div [ngClass]="{ container: true }">
+	<div [ngClass]="{ footer__wrapper: true }">
+		@for (nav of navButtons; track $index) {
+		<nav-button [nav]="nav"></nav-button>
+		}
+	</div>
+</div>

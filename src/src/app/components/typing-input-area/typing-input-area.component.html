@@ -1,0 +1,16 @@
+<div [ngClass]="{ text_area: true }">
+	@for (word of lesson.words; track $index) { @for (char of word.chars; track
+	$index) {
+	<typing-character
+		[ngClass]="{
+			typing_word__active: word.status === 'active',
+			typing_character__done: char.status === 'done',
+			typing_character__mistake: char.status === 'mistake',
+			typing_character__miss: char.status === 'miss'
+		}"
+		[character]="char"
+		[params]="lesson.params"
+	></typing-character>
+	} }
+</div>
+<typing-input (onKeydown)="onKeydown($event)"></typing-input>

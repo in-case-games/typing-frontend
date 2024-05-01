@@ -1,0 +1,21 @@
+@if(nav.url.indexOf("http") > -1) {
+<a href="{{ nav.url }}" target="_blank" [ngClass]="{ nav_button: true }">
+	<img
+		src="{{ nav.image.src }}"
+		alt="{{ nav.image.alt }}"
+		[style.height]="nav.image.height"
+		[style.width]="nav.image.width"
+	/>
+	<p [ngClass]="{ signature: true }">{{ nav.signature }}</p>
+</a>
+} @else {
+<a routerLink="{{ nav.url }}" [ngClass]="{ nav_button: true }">
+	<img
+		src="{{ nav.image.src }}"
+		alt="{{ nav.image.alt }}"
+		[style.height]="nav.image.height"
+		[style.width]="nav.image.width"
+	/>
+	<p [ngClass]="{ signature: true }">{{ nav.signature }}</p>
+</a>
+}
