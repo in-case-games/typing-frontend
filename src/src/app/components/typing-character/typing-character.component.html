@@ -3,6 +3,15 @@
 		character: params.separating !== character.char,
 		character__active:
 			params.separating !== character.char && character.status === 'active',
+		character__wait:
+			params.separating !== character.char && character.status === 'wait',
+		character__done:
+			params.separating !== character.char && character.status === 'done',
+		character__mistake:
+			params.separating !== character.char && character.status === 'mistake',
+		character__miss:
+			params.separating !== character.char && character.status === 'miss',
+		separating: params.separating === character.char,
 		separating__active:
 			params.separating === character.char && character.status === 'active',
 		separating__wait:
@@ -17,4 +26,9 @@
 >
 	{{ character.char }}
 </p>
-<div [ngClass]="{ carriage: true }"></div>
+<div
+	[ngClass]="{
+		carriage: true,
+		carriage__active: character.status === 'active'
+	}"
+></div>

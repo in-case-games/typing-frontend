@@ -13,8 +13,24 @@
 
 	--typing-character-font-family: 'RobotoMono, UbuntuMono';
 	--typing-character-font-size: 34px;
-	--typing-character-separating-width: 20px;
-	--typing-character-separating-height: 15px;
+	--typing-separating-width: 20px;
+
+	--typing-character__wait-font-color: #79580b;
+	--typing-character__active-font-color: #79580b;
+	--typing-character__done-font-color: #f8b415;
+	--typing-character__mistake-font-color: #ffe665;
+	--typing-character__miss-font-color: #f16868;
+
+	--typing-separating__wait-background-color: #79580b;
+	--typing-separating__active-background-color: #79580b;
+	--typing-separating__done-background-color: #f8b415;
+	--typing-separating__mistake-background-color: #ffe665;
+	--typing-separating__miss-background-color: #f16868;
+
+	--typing-carriage-width: 2px;
+	--typing-carriage-height: 70%;
+	--typing-carriage-top: 25%;
+	--typing-carriage-background-color: #f8b415;
 
 	/* Header */
 	--header-background-color: #1a1a1d;

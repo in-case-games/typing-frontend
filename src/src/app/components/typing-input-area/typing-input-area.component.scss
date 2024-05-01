@@ -6,28 +6,20 @@
 	align-content: stretch;
 
 	max-width: 720px;
-	min-height: 500px;
+}
+
+.word__active {
+}
+
+.word {
+	display: flex;
+
+	margin: 10px 0;
 
 	typing-character {
 		display: flex;
 		align-items: center;
 
 		position: relative;
-
-		height: 50px;
-	}
-
-	.typing_word__active {
-		border-bottom: 1px solid gray;
-	}
-
-	.typing_character__done {
-		color: green;
-	}
-	.typing_character__mistake {
-		color: yellow;
-	}
-	.typing_character__miss {
-		color: red;
 	}
 }
