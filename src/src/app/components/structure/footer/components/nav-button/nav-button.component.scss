@@ -1,0 +1,13 @@
+.nav_button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.signature {
+		color: var(--nav__footer-font-color);
+		font-family: var(--nav__footer-font-family);
+
+		padding: 0;
+		margin: 0;
+	}
+}
