@@ -5,7 +5,7 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve --open",
-		"build": "ng build"
+		"build": "ng build && gulp compress"
 	},
 	"dependencies": {
 		"@angular/common": "~17.3.5",
@@ -22,6 +22,8 @@
 		"@angular-devkit/build-angular": "~17.3.5",
 		"@angular/cli": "~17.3.5",
 		"@angular/compiler-cli": "~17.3.5",
+		"gulp": "^5.0.0",
+		"gulp-gzip": "^1.4.2",
 		"typescript": "~5.4.5"
 	}
 }

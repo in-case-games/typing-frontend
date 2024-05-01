@@ -2,6 +2,33 @@
 	font-size: var(--typing-character-font-size);
 	font-family: var(--typing-character-font-family);
 	padding: 0;
+	margin: 0;
+}
+.character__active {
+	border-bottom: 1px solid green;
+}
+.separating__active,
+.separating__wait,
+.separating__done,
+.separating__mistake,
+.separating__miss {
+	margin: 0;
+	padding: 0;
+	width: var(--typing-character-separating-width);
+	height: var(--typing-character-separating-height);
+}
+.separating__active,
+.separating__wait {
+	background-color: gray;
+}
+.separating__done {
+	background-color: green;
+}
+.separating__mistake {
+	background-color: yellow;
+}
+.separating__miss {
+	background-color: red;
 }
 .carriage {
 	position: absolute;

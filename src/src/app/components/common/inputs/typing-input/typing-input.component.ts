@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TypingInputComponent implements OnInit {
 	@Output()
-	public textChange = new EventEmitter<string>();
+	public onKeydown = new EventEmitter<any>();
 
 	ngOnInit() {
 		const input = document.getElementById('typing-input-text');
@@ -28,7 +28,7 @@ export class TypingInputComponent implements OnInit {
 		}
 	}
 
-	onKeydown($event) {
-		console.log($event);
+	readKeydown($event: any) {
+		this.onKeydown.emit($event);
 	}
 }

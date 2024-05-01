@@ -13,5 +13,6 @@ import { LessonItemComponent } from './components/lesson-item/lesson-item.compon
 	styleUrls: ['./home.component.scss'],
 })
 export class HomePageComponent {
-	public readonly lessons: LessonItemModel[] = LessonConstants.DefaultLessons;
+	public readonly lessons: LessonItemModel[] =
+		LessonConstants.GetDefaultLessons();
 }

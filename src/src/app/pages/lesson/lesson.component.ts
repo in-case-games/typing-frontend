@@ -25,7 +25,7 @@ export class LessonPageComponent {
 	constructor(private route: ActivatedRoute) {
 		this._routeSubscription = route.params.subscribe(params => {
 			this.id = params['id'];
-			this.lesson = LessonConstants.DefaultLessons[this.id - 1];
+			this.lesson = LessonConstants.GetDefaultLessons()[this.id - 1];
 
 			this.lesson.words = this._generationService.RandomSelectionWordsByLesson(
 				this.lesson

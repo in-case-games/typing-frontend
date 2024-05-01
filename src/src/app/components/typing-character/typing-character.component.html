@@ -1,10 +1,19 @@
 <p
-	[ngClass]="{ character: true }"
-	[style.width]="
-		params.separating.char === character.char
-			? 'var(--typing-character-separating-width)'
-			: 'auto'
-	"
+	[ngClass]="{
+		character: params.separating !== character.char,
+		character__active:
+			params.separating !== character.char && character.status === 'active',
+		separating__active:
+			params.separating === character.char && character.status === 'active',
+		separating__wait:
+			params.separating === character.char && character.status === 'wait',
+		separating__done:
+			params.separating === character.char && character.status === 'done',
+		separating__mistake:
+			params.separating === character.char && character.status === 'mistake',
+		separating__miss:
+			params.separating === character.char && character.status === 'miss'
+	}"
 >
 	{{ character.char }}
 </p>

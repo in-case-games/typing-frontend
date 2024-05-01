@@ -2,11 +2,23 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
 
 	max-width: 720px;
+	min-height: 500px;
 
 	typing-character {
+		display: flex;
+		align-items: center;
+
 		position: relative;
+
+		height: 50px;
+	}
+
+	.typing_word__active {
+		border-bottom: 1px solid gray;
 	}
 
 	.typing_character__done {

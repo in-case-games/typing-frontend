@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { TypingStatus } from '../enums/typing-status.enum';
 import { IGenerationService } from '../interfaces/generation.interface';
 import { LessonItemModel } from '../models/lesson-item.model';
 import { LessonParamsModel } from '../models/lesson-params.model';
@@ -41,10 +42,13 @@ export class GenerationService implements IGenerationService {
 
 			words.push(word);
 
-			if (params.separating.char.length > 0) {
-				let separatingWord = new TypingWordModel();
-				separatingWord.chars.push(params.separating);
-				words.push(separatingWord);
+			let separatingWord: TypingWordModel = new TypingWordModel();
+			separatingWord.chars.push(new TypingCharacterModel(params.separating));
+			words.push(separatingWord);
+
+			if (i === 0) {
+				word.status = TypingStatus.Active;
+				word.chars[0].status = TypingStatus.Active;
 			}
 		}
 
