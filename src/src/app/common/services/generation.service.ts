@@ -35,21 +35,27 @@ export class GenerationService implements IGenerationService {
 				);
 				word.chars.push(
 					new TypingCharacterModel(
+						false,
 						params.includedCharacters[includedCharacterId]
 					)
 				);
 			}
 
-			words.push(word);
-
-			let separatingWord: TypingWordModel = new TypingWordModel();
-			separatingWord.chars.push(new TypingCharacterModel(params.separating));
-			words.push(separatingWord);
+			if (i !== params.maxWords - 1) {
+				let includedSeparatingId: number = this.GenerateRandomNumber(
+					0,
+					params.includedSeparating.length - 1
+				);
+				let separating = params.includedSeparating[includedSeparatingId];
+				word.chars.push(new TypingCharacterModel(true, separating));
+			}
 
 			if (i === 0) {
 				word.status = TypingStatus.Active;
 				word.chars[0].status = TypingStatus.Active;
 			}
+
+			words.push(word);
 		}
 
 		return words;

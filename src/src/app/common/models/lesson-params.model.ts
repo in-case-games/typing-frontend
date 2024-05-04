@@ -7,16 +7,18 @@ export class LessonParamsModel {
 	public readonly maxCharForWord: number = 5;
 	public readonly maxCharAttempt: number = 1;
 	public readonly allowErrors: boolean = true;
-	public readonly separating: string = ' ';
+	public readonly includedSeparating: string[] = [' '];
+	public readonly enablePreview: boolean = false;
 
 	constructor(
 		includedCharacters: string[],
 		ignoreChars: TypingCharacterModel[],
+		allowErrors: boolean = true,
+		includeSeparating: string[] = [' '],
 		maxWords: number = 50,
 		maxCharForWord: number = 5,
 		maxCharAttempt: number = 1,
-		allowErrors: boolean = true,
-		separating: string = ' '
+		enablePreview: boolean = false
 	) {
 		this.includedCharacters = includedCharacters;
 		this.ignoreChars = ignoreChars;
@@ -24,6 +26,7 @@ export class LessonParamsModel {
 		this.maxCharForWord = maxCharForWord;
 		this.maxCharAttempt = maxCharAttempt;
 		this.allowErrors = allowErrors;
-		this.separating = separating;
+		this.includedSeparating = includeSeparating;
+		this.enablePreview = enablePreview;
 	}
 }

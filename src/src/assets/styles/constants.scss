@@ -10,11 +10,36 @@
 	--lesson-item__hard-border-color: red;
 	--lesson-item-font-family: 'RobotoMono';
 	--lesson-item-font-size: 24px;
+	--lesson-item-topic-font-size: 45px;
+
+	--typing-start-blur-duration: 300ms;
+	--typing-message-start-visibility-duration: 300ms;
+	--typing-message-start-font-size: 27px;
+	--typing-message-start-font-family: 'Nunito';
 
 	--typing-character-font-family: 'RobotoMono, UbuntuMono';
 	--typing-character-font-size: 34px;
-	--typing-character-separating-width: 20px;
-	--typing-character-separating-height: 15px;
+
+	--typing-separating-width: 20px;
+
+	--typing-character__wait-font-color: #79580b;
+	--typing-character__active-font-color: #79580b;
+	--typing-character__done-font-color: #f8b415;
+	--typing-character__mistake-font-color: #ffe665;
+	--typing-character__miss-font-color: #f16868;
+
+	--typing-separating__wait-border-bottom: 2px solid #79580b;
+	--typing-separating__active-border-bottom: 2px solid #79580b;
+	--typing-separating__done-border-bottom: 2px solid #f8b415;
+	--typing-separating__mistake-border-bottom: 2px solid #ffe665;
+	--typing-separating__miss-border-bottom: 2px solid #f16868;
+
+	--typing-carriage-width: 2px;
+	--typing-carriage-height: 70%;
+	--typing-carriage-top: 25%;
+	--typing-carriage-background-color: #f8b415;
+
+	--typing-carriage-transition__new-line-duration: 300ms;
 
 	/* Header */
 	--header-background-color: #1a1a1d;
