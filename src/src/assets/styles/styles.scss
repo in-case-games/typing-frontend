@@ -20,6 +20,11 @@ root {
 		flex: 1 0 auto;
 
 		margin-top: 80px;
+
+		lesson-page {
+			display: block;
+			height: 100%;
+		}
 	}
 
 	header,

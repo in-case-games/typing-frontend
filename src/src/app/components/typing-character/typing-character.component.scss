@@ -23,8 +23,7 @@
 	margin: 0;
 	padding: 0;
 	width: var(--typing-separating-width);
-	height: var(--typing-separating-height);
-	min-height: var(--typing-separating-min-height);
+	height: var(--typing-character-font-size);
 }
 
 .separating__wait {

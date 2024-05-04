@@ -12,6 +12,11 @@ export class LessonItemModel {
 	public readonly language: Language;
 
 	public positionWord: number = 0;
+	public carriageMargin: number = 0;
+	public carriageMarginStart: number = 0;
+	public carriageMarginLock: boolean = false;
+	public isEnd: boolean = false;
+	public isStart: boolean = false;
 
 	public words: TypingWordModel[] = [];
 
@@ -30,24 +35,31 @@ export class LessonItemModel {
 		this.color = `var(--lesson-item__${degreeDifficulty}-border-color)`;
 	}
 
-	public Next($event: any): boolean {
+	public Next($event: any): void {
 		if (
+			this.isEnd ||
 			!$event ||
 			!$event.key ||
 			this.params.ignoreChars.map(e => e.char).indexOf($event.key) > -1
 		) {
-			return false;
+			return;
 		}
-
-		if (this.positionWord + 1 > this.words.length) {
-			//end
-			return true;
+		if (
+			!this.isStart &&
+			!this.params.enablePreview &&
+			this.positionWord === 0 &&
+			this.words[this.positionWord].positionCharacter === 0
+		) {
+			this.isStart = $event.key === ' ';
+			return;
 		}
 
 		let word = this.words[this.positionWord];
 		let positionCharacter = word.positionCharacter;
 
-		word.Next($event, this.params);
+		if (!word.Next($event, this.params)) {
+			return;
+		}
 
 		if (this.words[this.positionWord].positionCharacter === positionCharacter) {
 			this.positionWord += 1;
@@ -63,11 +75,18 @@ export class LessonItemModel {
 				TypingStatus.Active;
 		}
 
-		return false;
+		if (this.positionWord + 1 > this.words.length) {
+			this.isEnd = true;
+		}
+
+		this.ChangeCarriageMargin(true);
+
+		return;
 	}
 
 	public Previous($event: any): void {
 		if (
+			this.isEnd ||
 			!$event ||
 			!$event.key ||
 			$event.key !== 'Backspace' ||
@@ -78,23 +97,58 @@ export class LessonItemModel {
 		}
 
 		let word = this.words[this.positionWord];
+		let positionCharacter = word.positionCharacter;
 
-		if (this.positionWord == 0 && word.positionCharacter == 0) {
+		if (
+			!this.params.allowErrors ||
+			(this.positionWord === 0 && word.positionCharacter === 0)
+		) {
 			return;
-		} else if (word.positionCharacter == 0) {
-			this.words[this.positionWord].chars[word.positionCharacter].status =
-				TypingStatus.Wait;
-			this.words[this.positionWord].status = TypingStatus.Wait;
+		}
+
+		if (!word.Previous()) return;
+
+		if (positionCharacter === 0) {
 			this.positionWord -= 1;
 			this.words[this.positionWord].status = TypingStatus.Active;
 			word = this.words[this.positionWord];
-		} else {
-			this.words[this.positionWord].chars[word.positionCharacter].status =
-				TypingStatus.Wait;
-			this.words[this.positionWord].positionCharacter -= 1;
 		}
 
 		this.words[this.positionWord].chars[word.positionCharacter].status =
 			TypingStatus.Active;
+
+		this.ChangeCarriageMargin(false);
+	}
+
+	public ChangeCarriageMargin(next: boolean): void {
+		if (this.carriageMarginLock) return;
+
+		let carriages = Array.from(document.getElementsByClassName('carriage'));
+		let carriageActiveIndex = carriages.findIndex(c =>
+			c.classList.contains('carriage__active')
+		);
+
+		let carriageNextIndex = next
+			? carriageActiveIndex + 1
+			: carriageActiveIndex - 1;
+
+		if (carriageNextIndex >= 0 && carriageNextIndex < carriages.length) {
+			if (this.carriageMarginStart === 0) {
+				this.carriageMarginStart =
+					carriages[carriageNextIndex].getBoundingClientRect().top;
+			}
+
+			const carriageNextY =
+				carriages[carriageNextIndex].getBoundingClientRect().top;
+
+			if (carriageNextY - this.carriageMarginStart !== 0) {
+				this.carriageMarginLock = true;
+				this.carriageMargin += carriageNextY - this.carriageMarginStart;
+
+				setTimeout(() => {
+					this.carriageMarginLock = false;
+				}, 300); //TODO: Необходимо автоматически менять таймаут timeout == --typing-carriage-transition__new-line-duration
+			}
+		}
 	}
 }

@@ -1,14 +1,34 @@
 .text_area {
+	position: absolute;
+
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: stretch;
 	align-content: stretch;
 
-	max-width: 720px;
+	max-width: 1024px;
+
+	margin-left: 20px;
+
+	overflow: hidden;
+
+	transition: filter var(--typing-start-blur-duration),
+		margin var(--typing-carriage-transition__new-line-duration);
 }
 
-.word__active {
+.text_before_start {
+	position: absolute;
+
+	top: 22%;
+	left: 40%;
+
+	font-size: var(--typing-message-start-font-size);
+	font-family: var(--typing-message-start-font-family);
+
+	transition: visibility var(--typing-message-start-visibility-duration),
+		opacity var(--typing-message-start-visibility-duration);
+	z-index: 11;
 }
 
 .word {
@@ -21,5 +41,7 @@
 		align-items: center;
 
 		position: relative;
+
+		height: var(--typing-character-font-size);
 	}
 }

@@ -17,31 +17,31 @@ export class LessonConstants {
 				'ао оа',
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(['а', 'о'], this.DefaultIgnoreChars)
+				new LessonParamsModel(['а', 'о'], this.DefaultIgnoreChars, false)
 			),
 			new LessonItemModel(
 				'вл лв',
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(['в', 'л'], this.DefaultIgnoreChars)
+				new LessonParamsModel(['в', 'л'], this.DefaultIgnoreChars, true)
 			),
 			new LessonItemModel(
 				'ыд ды',
 				Language.Russian,
 				DegreeDifficulty.Middle,
-				new LessonParamsModel(['ы', 'д'], this.DefaultIgnoreChars)
+				new LessonParamsModel(['ы', 'д'], this.DefaultIgnoreChars, false)
 			),
 			new LessonItemModel(
 				'фж жф',
 				Language.Russian,
 				DegreeDifficulty.Hard,
-				new LessonParamsModel(['ф', 'ж'], this.DefaultIgnoreChars)
+				new LessonParamsModel(['ф', 'ж'], this.DefaultIgnoreChars, false)
 			),
 			new LessonItemModel(
 				'пр рп',
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(['п', 'р'], this.DefaultIgnoreChars)
+				new LessonParamsModel(['п', 'р'], this.DefaultIgnoreChars, false)
 			),
 		];
 	}

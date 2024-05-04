@@ -10,13 +10,17 @@
 	--lesson-item__hard-border-color: red;
 	--lesson-item-font-family: 'RobotoMono';
 	--lesson-item-font-size: 24px;
+	--lesson-item-topic-font-size: 45px;
+
+	--typing-start-blur-duration: 300ms;
+	--typing-message-start-visibility-duration: 300ms;
+	--typing-message-start-font-size: 27px;
+	--typing-message-start-font-family: 'Nunito';
 
 	--typing-character-font-family: 'RobotoMono, UbuntuMono';
 	--typing-character-font-size: 34px;
 
 	--typing-separating-width: 20px;
-	--typing-separating-height: 70%;
-	--typing-separating-min-height: 40px;
 
 	--typing-character__wait-font-color: #79580b;
 	--typing-character__active-font-color: #79580b;
@@ -34,6 +38,8 @@
 	--typing-carriage-height: 70%;
 	--typing-carriage-top: 25%;
 	--typing-carriage-background-color: #f8b415;
+
+	--typing-carriage-transition__new-line-duration: 300ms;
 
 	/* Header */
 	--header-background-color: #1a1a1d;
