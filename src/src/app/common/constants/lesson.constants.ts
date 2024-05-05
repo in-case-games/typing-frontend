@@ -17,7 +17,7 @@ export class LessonConstants {
 				'ао оа',
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(['а', 'о'], this.DefaultIgnoreChars, false)
+				new LessonParamsModel(['а', 'о'], this.DefaultIgnoreChars, true)
 			),
 			new LessonItemModel(
 				'вл лв',
@@ -41,7 +41,7 @@ export class LessonConstants {
 				'пр рп',
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(['п', 'р'], this.DefaultIgnoreChars, false)
+				new LessonParamsModel(['п', 'р'], this.DefaultIgnoreChars, true)
 			),
 		];
 	}

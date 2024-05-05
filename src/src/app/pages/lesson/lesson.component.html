@@ -1,6 +1,14 @@
 <div [ngClass]="{ container: true }">
 	<div [ngClass]="{ lesson__wrapper: true }">
+		@if(!lesson.isEnd) {
 		<h1 [ngClass]="{ topic: true }">{{ lesson.topic }}</h1>
 		<typing-input-area [lesson]="lesson"></typing-input-area>
+		} @else {
+		<typing-results
+			[lesson]="lesson"
+			[id]="id"
+			(refreshTrigger)="refreshLesson()"
+		></typing-results>
+		}
 	</div>
 </div>
