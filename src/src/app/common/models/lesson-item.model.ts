@@ -2,6 +2,7 @@ import { DegreeDifficulty } from '../enums/degree-difficulty.enum';
 import { Language } from '../enums/language.enum';
 import { TypingStatus } from '../enums/typing-status.enum';
 import { LessonParamsModel } from './lesson-params.model';
+import { TypingResultsModel } from './typing-results.model';
 import { TypingWordModel } from './typing-word.model';
 
 export class LessonItemModel {
@@ -9,14 +10,22 @@ export class LessonItemModel {
 	public readonly degreeDifficulty: DegreeDifficulty;
 	public readonly color: string;
 	public readonly params: LessonParamsModel;
+
 	public readonly language: Language;
 
 	public positionWord: number = 0;
+
 	public carriageMargin: number = 0;
 	public carriageMarginStart: number = 0;
 	public carriageMarginLock: boolean = false;
+
 	public isEnd: boolean = false;
 	public isStart: boolean = false;
+
+	public startDate: Date;
+	public endDate: Date;
+
+	public results: TypingResultsModel;
 
 	public words: TypingWordModel[] = [];
 
@@ -57,6 +66,11 @@ export class LessonItemModel {
 		let word = this.words[this.positionWord];
 		let positionCharacter = word.positionCharacter;
 
+		if (!this.isStart || !this.startDate) {
+			this.isStart = true;
+			this.startDate = new Date();
+		}
+
 		if (!word.Next($event, this.params)) {
 			return;
 		}
@@ -77,6 +91,8 @@ export class LessonItemModel {
 
 		if (this.positionWord + 1 > this.words.length) {
 			this.isEnd = true;
+			this.endDate = new Date();
+			this.results = new TypingResultsModel(this);
 		}
 
 		this.ChangeCarriageMargin(true);

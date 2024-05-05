@@ -1,0 +1,13 @@
+<div [ngClass]="{ wrapper: true }">
+	<h1 [ngClass]="{ title: true }">Результаты</h1>
+	<div [ngClass]="{ results_panel: true }">
+		@for (result of lesson.results.display; track $index) {
+		<result-display [result]="result"></result-display>
+		}
+	</div>
+	<div [ngClass]="{ result_tool_bar: true }">
+		<button (click)="previousLesson()">◁</button>
+		<button (click)="refreshLesson()">↻</button>
+		<button (click)="nextLesson()">▷</button>
+	</div>
+</div>
