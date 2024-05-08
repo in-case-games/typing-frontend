@@ -36,7 +36,7 @@ export class GenerationService implements IGenerationService {
 				word.chars.push(
 					new TypingCharacterModel(
 						false,
-						params.includedCharacters[includedCharacterId]
+						params.includedCharacters[includedCharacterId].key.Copy()
 					)
 				);
 			}
@@ -47,7 +47,7 @@ export class GenerationService implements IGenerationService {
 					params.includedSeparating.length - 1
 				);
 				let separating = params.includedSeparating[includedSeparatingId];
-				word.chars.push(new TypingCharacterModel(true, separating));
+				word.chars.push(new TypingCharacterModel(true, separating.key.Copy()));
 			}
 
 			if (i === 0) {

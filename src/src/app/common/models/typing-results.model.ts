@@ -66,7 +66,10 @@ export class TypingResultsModel {
 				Math.round(this.accuracy * 100).toString() + '%',
 				'Точность'
 			),
-			new ResultDisplayModel(Math.round(words).toString(), 'Слов'),
+			new ResultDisplayModel(
+				Math.round(lesson.words.length).toString(),
+				'Слов'
+			),
 			new ResultDisplayModel(Math.round(chars.length).toString(), 'Символов'),
 			new ResultDisplayModel(
 				Math.round(this.secondsSpent).toString(),

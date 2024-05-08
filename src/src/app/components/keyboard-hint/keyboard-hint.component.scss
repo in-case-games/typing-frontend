@@ -1,0 +1,28 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	width: 640px;
+	min-width: 640px;
+}
+
+.row {
+	display: flex;
+
+	.key {
+		height: 33px;
+
+		border: 1px solid var(--main-font-color);
+		border-radius: 4px;
+		background: black;
+
+		font-family: 'RobotoMono';
+
+		padding-left: 1px;
+		margin: 1px;
+	}
+
+	.key__active {
+		background: green;
+	}
+}

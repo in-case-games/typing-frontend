@@ -1,6 +1,9 @@
+import { LessonConstants } from '../constants/lesson.constants';
 import { DegreeDifficulty } from '../enums/degree-difficulty.enum';
+import { KeyCode } from '../enums/key-code.enum';
 import { Language } from '../enums/language.enum';
 import { TypingStatus } from '../enums/typing-status.enum';
+import { Keyboard } from './keyboard.model';
 import { LessonParamsModel } from './lesson-params.model';
 import { TypingResultsModel } from './typing-results.model';
 import { TypingWordModel } from './typing-word.model';
@@ -11,6 +14,7 @@ export class LessonItemModel {
 	public readonly color: string;
 	public readonly params: LessonParamsModel;
 
+	public readonly keyboard: Keyboard;
 	public readonly language: Language;
 
 	public positionWord: number = 0;
@@ -38,6 +42,7 @@ export class LessonItemModel {
 	) {
 		this.topic = topic;
 		this.language = language;
+		this.keyboard = new Keyboard(LessonConstants.KeyboardLayoutRu); //TODO: Добавить словарь с языком и клавиатурой к нему
 		this.degreeDifficulty = degreeDifficulty;
 		this.params = params;
 		this.words = words;
@@ -48,8 +53,8 @@ export class LessonItemModel {
 		if (
 			this.isEnd ||
 			!$event ||
-			!$event.key ||
-			this.params.ignoreChars.map(e => e.char).indexOf($event.key) > -1
+			!$event.code ||
+			this.params.ignoreChars.map(e => e.key.display).indexOf($event.key) > -1
 		) {
 			return;
 		}
@@ -59,7 +64,11 @@ export class LessonItemModel {
 			this.positionWord === 0 &&
 			this.words[this.positionWord].positionCharacter === 0
 		) {
-			this.isStart = $event.key === ' ';
+			this.isStart = $event.code === KeyCode.Space;
+
+			if (this.isStart) {
+				this.keyboard.activeKey = this.words[0].chars[0].key;
+			}
 			return;
 		}
 
@@ -87,12 +96,16 @@ export class LessonItemModel {
 		if (this.positionWord + 1 <= this.words.length) {
 			this.words[this.positionWord].chars[word.positionCharacter].status =
 				TypingStatus.Active;
+			this.keyboard.activeKey =
+				this.words[this.positionWord].chars[word.positionCharacter].key;
 		}
 
 		if (this.positionWord + 1 > this.words.length) {
 			this.isEnd = true;
 			this.endDate = new Date();
 			this.results = new TypingResultsModel(this);
+			this.keyboard.activeKey = undefined;
+			//TODO: Обнуление всех active и wait в miss
 		}
 
 		this.ChangeCarriageMargin(true);
@@ -104,9 +117,10 @@ export class LessonItemModel {
 		if (
 			this.isEnd ||
 			!$event ||
-			!$event.key ||
-			$event.key !== 'Backspace' ||
-			this.params.ignoreChars.map(e => e.char).indexOf($event.key) > -1 ||
+			!$event.code ||
+			$event.code !== KeyCode.Backspace ||
+			this.params.ignoreChars.map(e => e.key.display).indexOf($event.key) >
+				-1 ||
 			this.positionWord + 1 > this.words.length
 		) {
 			return;
@@ -132,6 +146,8 @@ export class LessonItemModel {
 
 		this.words[this.positionWord].chars[word.positionCharacter].status =
 			TypingStatus.Active;
+		this.keyboard.activeKey =
+			this.words[this.positionWord].chars[word.positionCharacter].key;
 
 		this.ChangeCarriageMargin(false);
 	}

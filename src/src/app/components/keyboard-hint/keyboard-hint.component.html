@@ -1,0 +1,25 @@
+<div [ngClass]="{ wrapper: true }">
+	<div
+		*ngFor="let row of lesson.keyboard.layout; index as i"
+		[ngClass]="{ row: true }"
+	>
+		<div
+			*ngFor="let key of row; index as j"
+			[ngClass]="{
+				key: true,
+				key__active:
+					lesson.keyboard.activeKey &&
+					lesson.keyboard.activeKey.code === key.code
+			}"
+			[style.width]="key.size"
+			[style.font-size]="key.fontSize"
+			[style.background]="
+				lesson.keyboard.activeKey && lesson.keyboard.activeKey.code === key.code
+					? 'green'
+					: key.finger
+			"
+		>
+			{{ key.display }}
+		</div>
+	</div>
+</div>
