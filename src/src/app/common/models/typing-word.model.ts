@@ -13,7 +13,8 @@ export class TypingWordModel {
 
 			if (
 				this.positionCharacter + 1 > this.chars.length ||
-				params.includedSeparating.indexOf($event.key) > -1
+				params.includedSeparating.findIndex(s => s.key.code === $event.code) >
+					-1
 			) {
 				this.positionCharacter -= 1;
 

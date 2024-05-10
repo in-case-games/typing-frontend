@@ -8,8 +8,8 @@ export class NavButtonConstants {
 			image: {
 				src: 'assets/images/icons/peoples.svg',
 				alt: 'Партнерам',
-				height: '45px',
-				width: '45px',
+				height: '25px',
+				width: '25px',
 			},
 		},
 		{
@@ -18,8 +18,8 @@ export class NavButtonConstants {
 			image: {
 				src: 'assets/images/icons/setting.svg',
 				alt: 'Наши проекты',
-				height: '45px',
-				width: '45px',
+				height: '25px',
+				width: '25px',
 			},
 		},
 		{
@@ -28,8 +28,8 @@ export class NavButtonConstants {
 			image: {
 				src: 'assets/images/icons/faq.svg',
 				alt: 'FAQ',
-				height: '45px',
-				width: '45px',
+				height: '25px',
+				width: '25px',
 			},
 		},
 	];

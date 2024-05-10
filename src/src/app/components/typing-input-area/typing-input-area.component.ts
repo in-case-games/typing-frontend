@@ -16,8 +16,8 @@ export class TypingInputAreaComponent {
 	public lesson: LessonItemModel;
 
 	onKeydown($event: any) {
-		if ($event && $event.key) {
-			if ($event.key === 'Backspace') this.lesson.Previous($event);
+		if ($event && $event.code) {
+			if ($event.code === 'Backspace') this.lesson.Previous($event);
 			else this.lesson.Next($event);
 		}
 	}
