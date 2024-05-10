@@ -14,7 +14,9 @@ export class LessonItemModel {
 	public readonly color: string;
 	public readonly params: LessonParamsModel;
 
-	public readonly keyboard: Keyboard;
+	public readonly keyboard: Keyboard = new Keyboard(
+		LessonConstants.KeyboardLayoutRu
+	);
 	public readonly language: Language;
 
 	public positionWord: number = 0;

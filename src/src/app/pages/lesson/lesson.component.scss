@@ -15,6 +15,13 @@
 	height: 100%;
 	width: 100%;
 
+	.hints__wrapper {
+		display: flex;
+		align-items: center;
+
+		margin-top: 50px;
+	}
+
 	typing-input-area {
 		flex: 1 0 auto;
 		position: relative;
@@ -26,9 +33,6 @@
 		text-align: center;
 		vertical-align: middle;
 		overflow: hidden;
-	}
-	keyboard-hint {
-		margin-top: 50px;
 	}
 }
 

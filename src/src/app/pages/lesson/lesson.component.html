@@ -34,7 +34,11 @@
 			</p>
 		</div>
 		<typing-input-area [lesson]="lesson"></typing-input-area>
-		<keyboard-hint [lesson]="lesson"></keyboard-hint>
+		<div [ngClass]="{ hints__wrapper: true }">
+			<hand-left [lesson]="lesson"></hand-left>
+			<keyboard-hint [lesson]="lesson"></keyboard-hint>
+			<hand-right [lesson]="lesson"></hand-right>
+		</div>
 		} @else {
 		<typing-results
 			[lesson]="lesson"

@@ -7,17 +7,24 @@
 			*ngFor="let key of row; index as j"
 			[ngClass]="{
 				key: true,
+				key_finger_big: key.finger === 'Big',
+				key_finger_big__left: key.finger === 'BigLeft',
+				key_finger_big__right: key.finger === 'BigRight',
+				key_finger_index__left: key.finger === 'IndexLeft',
+				key_finger_index__right: key.finger === 'IndexRight',
+				key_finger_middle__left: key.finger === 'MiddleLeft',
+				key_finger_middle__right: key.finger === 'MiddleRight',
+				key_finger_ring__left: key.finger === 'RingLeft',
+				key_finger_ring__right: key.finger === 'RingRight',
+				key_finger_pinky__left: key.finger === 'PinkyLeft',
+				key_finger_pinky__right: key.finger === 'PinkyRight',
+				key_finger_indifference: key.finger === 'Indifference',
 				key__active:
 					lesson.keyboard.activeKey &&
-					lesson.keyboard.activeKey.code === key.code
+					lesson.keyboard.activeKey.code === key.code,
 			}"
 			[style.width]="key.size"
 			[style.font-size]="key.fontSize"
-			[style.background]="
-				lesson.keyboard.activeKey && lesson.keyboard.activeKey.code === key.code
-					? 'green'
-					: key.finger
-			"
 		>
 			{{ key.display }}
 		</div>
