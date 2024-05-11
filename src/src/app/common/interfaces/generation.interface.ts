@@ -8,4 +8,12 @@ export interface IGenerationService {
 	RandomSelectionWordsByCharacters(
 		params: LessonParamsModel
 	): TypingWordModel[];
+	RandomSelectionWordsByCharactersWithFishText(
+		lesson: LessonItemModel,
+		fishText: string
+	): TypingWordModel[];
+	GetNormalizationFormFishText(
+		lesson: LessonItemModel,
+		fishText: string
+	): string[];
 }

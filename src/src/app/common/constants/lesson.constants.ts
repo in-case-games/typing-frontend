@@ -1,5 +1,6 @@
 import { DegreeDifficulty } from 'src/app/common/enums/degree-difficulty.enum';
 import { LessonItemModel } from 'src/app/common/models/lesson-item.model';
+import { LessonsGroupModel } from 'src/app/common/models/lessons-group.model';
 import { KeyCode } from '../enums/key-code.enum';
 import { KeyFinger } from '../enums/key-finger.enum';
 import { KeyFontSize } from '../enums/key-font-size.enum';
@@ -37,101 +38,337 @@ export class LessonConstants {
 		),
 	];
 
+	public static GetDefaultGroups(): LessonsGroupModel[] {
+		let defaultLessons = this.GetDefaultLessons();
+
+		return [
+			new LessonsGroupModel('Базовая серия 1', defaultLessons.slice(0, 5)),
+			new LessonsGroupModel('Базовая серия 2', defaultLessons.slice(5, 10)),
+			new LessonsGroupModel('Базовая серия 3', defaultLessons.slice(10, 15)),
+			new LessonsGroupModel('Базовая серия 4', defaultLessons.slice(15, 20)),
+		];
+	}
+
 	public static GetDefaultLessons(): LessonItemModel[] {
 		return [
 			new LessonItemModel(
 				'ао оа',
+				1,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
-					[
-						new TypingCharacterModel(
-							false,
-							new KeyModel('а', KeyCode.KeyF, KeyFinger.IndexLeft)
-						),
-						new TypingCharacterModel(
-							false,
-							new KeyModel('о', KeyCode.KeyJ, KeyFinger.IndexRight)
-						),
-					],
-					this.DefaultIgnoreChars,
-					true
+					['а', 'о'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
 				)
 			),
 			new LessonItemModel(
 				'вл лв',
+				2,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
-					[
-						new TypingCharacterModel(
-							false,
-							new KeyModel('в', KeyCode.KeyD, KeyFinger.MiddleLeft)
-						),
-						new TypingCharacterModel(
-							false,
-							new KeyModel('л', KeyCode.KeyK, KeyFinger.MiddleRight)
-						),
-					],
-					this.DefaultIgnoreChars,
-					true
+					['в', 'л'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
 				)
 			),
 			new LessonItemModel(
 				'ыд ды',
+				3,
 				Language.Russian,
 				DegreeDifficulty.Middle,
 				new LessonParamsModel(
-					[
-						new TypingCharacterModel(
-							false,
-							new KeyModel('ы', KeyCode.KeyS, KeyFinger.RingLeft)
-						),
-						new TypingCharacterModel(
-							false,
-							new KeyModel('д', KeyCode.KeyL, KeyFinger.RingRight)
-						),
-					],
-					this.DefaultIgnoreChars,
+					['ы', 'д'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
 					false
 				)
 			),
 			new LessonItemModel(
 				'фж жф',
+				4,
 				Language.Russian,
 				DegreeDifficulty.Hard,
 				new LessonParamsModel(
-					[
-						new TypingCharacterModel(
-							false,
-							new KeyModel('ф', KeyCode.KeyA, KeyFinger.PinkyLeft)
-						),
-						new TypingCharacterModel(
-							false,
-							new KeyModel('ж', KeyCode.Semicolon, KeyFinger.PinkyRight)
-						),
-					],
-					this.DefaultIgnoreChars,
+					['ф', 'ж'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
 					false
 				)
 			),
 			new LessonItemModel(
 				'пр рп',
+				5,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
-					[
-						new TypingCharacterModel(
-							false,
-							new KeyModel('п', KeyCode.KeyG, KeyFinger.IndexLeft)
-						),
-						new TypingCharacterModel(
-							false,
-							new KeyModel('р', KeyCode.KeyH, KeyFinger.IndexRight)
-						),
-					],
-					this.DefaultIgnoreChars,
-					true
+					['п', 'р'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'мь ьм',
+				6,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['м', 'ь'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'сб бс',
+				7,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['с', 'б'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'чю юч',
+				8,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['ч', 'ю'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'ит ти',
+				9,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['и', 'т'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'кг гк',
+				10,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['к', 'г'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'уш шу',
+				11,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['у', 'ш'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'цщ щц',
+				12,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['ц', 'щ'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'йз зй',
+				13,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['й', 'з'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'ен не',
+				14,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['е', 'н'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'хъ ъх',
+				15,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['х', 'ъ'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'я. .я',
+				16,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['я', '.'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'э\\ \\э',
+				17,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['э', '\\'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'яэ. .эя',
+				18,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['е', 'п', 'и'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'хъэ эхъ',
+				19,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['х', 'ъ', 'э'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'хъ. .хъ',
+				20,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['х', 'ъ', 'э'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
 				)
 			),
 		];
@@ -182,7 +419,7 @@ export class LessonConstants {
 			new KeyModel('ъ', KeyCode.BracketRight, KeyFinger.PinkyRight),
 			new KeyModel(
 				'\\',
-				KeyCode.BacksLash,
+				KeyCode.Backslash,
 				KeyFinger.PinkyRight,
 				KeySize.Key175,
 				KeyFontSize.Small
@@ -230,7 +467,7 @@ export class LessonConstants {
 			new KeyModel('и', KeyCode.KeyB, KeyFinger.IndexLeft),
 			new KeyModel('т', KeyCode.KeyN, KeyFinger.IndexRight),
 			new KeyModel('ь', KeyCode.KeyM, KeyFinger.IndexRight),
-			new KeyModel('б', KeyCode.Coma, KeyFinger.MiddleRight),
+			new KeyModel('б', KeyCode.Comma, KeyFinger.MiddleRight),
 			new KeyModel('ю', KeyCode.Period, KeyFinger.RingRight),
 			new KeyModel('.', KeyCode.Slash, KeyFinger.PinkyRight),
 			new KeyModel(

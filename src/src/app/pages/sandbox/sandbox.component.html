@@ -7,20 +7,6 @@
 				!lesson.params.enablePreview && !lesson.isStart ? 'center' : 'flex-end'
 			"
 		>
-			<h1
-				[ngClass]="{ topic: true }"
-				[style.visibility]="
-					!lesson.params.enablePreview && !lesson.isStart ? 'visible' : 'hidden'
-				"
-				[style.display]="
-					!lesson.params.enablePreview && !lesson.isStart ? 'inline' : 'none'
-				"
-				[style.opacity]="
-					!lesson.params.enablePreview && !lesson.isStart ? '1' : '0'
-				"
-			>
-				{{ lesson.topic }}
-			</h1>
 			<p
 				[ngClass]="{ counter: true }"
 				[style.visibility]="
@@ -45,7 +31,6 @@
 		} @else {
 		<typing-results
 			[lesson]="lesson"
-			[id]="id"
 			(refreshTrigger)="refreshLesson()"
 		></typing-results>
 		}

@@ -10,6 +10,7 @@ import { TypingWordModel } from './typing-word.model';
 
 export class LessonItemModel {
 	public readonly topic: string;
+	public readonly number: number;
 	public readonly degreeDifficulty: DegreeDifficulty;
 	public readonly color: string;
 	public readonly params: LessonParamsModel;
@@ -37,12 +38,14 @@ export class LessonItemModel {
 
 	constructor(
 		topic: string,
+		number: number,
 		language: Language,
 		degreeDifficulty: DegreeDifficulty,
 		params: LessonParamsModel,
 		words: TypingWordModel[] = []
 	) {
 		this.topic = topic;
+		this.number = number;
 		this.language = language;
 		this.keyboard = new Keyboard(LessonConstants.KeyboardLayoutRu); //TODO: Добавить словарь с языком и клавиатурой к нему
 		this.degreeDifficulty = degreeDifficulty;

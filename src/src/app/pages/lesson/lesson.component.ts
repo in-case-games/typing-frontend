@@ -1,8 +1,10 @@
 import { NgClass } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { Component, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LessonConstants } from 'src/app/common/constants/lesson.constants';
+import { IGenerationService } from 'src/app/common/interfaces/generation.interface';
 import { LessonItemModel } from 'src/app/common/models/lesson-item.model';
 import { GenerationService } from 'src/app/common/services/generation.service';
 import { HandLeftComponent } from 'src/app/components/hands/hand-left.component';
@@ -21,8 +23,14 @@ import { TypingResultsComponent } from 'src/app/components/typing-results/typing
 		KeyboardHintComponent,
 		HandLeftComponent,
 		HandRightComponent,
+		HttpClientModule,
 	],
-	providers: [GenerationService],
+	providers: [
+		{
+			provide: 'IGenerationService',
+			useClass: GenerationService,
+		},
+	],
 	templateUrl: `./lesson.component.html`,
 	styleUrls: ['./lesson.component.scss'],
 })
@@ -30,10 +38,12 @@ export class LessonPageComponent {
 	public id: number | undefined;
 	public lesson: LessonItemModel;
 
-	private readonly _generationService = inject(GenerationService);
 	private readonly _routeSubscription: Subscription;
 
-	constructor(private route: ActivatedRoute) {
+	constructor(
+		@Inject('IGenerationService') private generationService: IGenerationService,
+		private route: ActivatedRoute
+	) {
 		this._routeSubscription = route.params.subscribe(params => {
 			this.id = Number.parseInt(params['id']);
 			this.refreshLesson();
@@ -43,7 +53,7 @@ export class LessonPageComponent {
 	refreshLesson() {
 		this.lesson = LessonConstants.GetDefaultLessons()[this.id - 1];
 
-		this.lesson.words = this._generationService.RandomSelectionWordsByLesson(
+		this.lesson.words = this.generationService.RandomSelectionWordsByLesson(
 			this.lesson
 		);
 	}

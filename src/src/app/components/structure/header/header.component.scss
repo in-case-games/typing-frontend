@@ -24,3 +24,16 @@
 		font-weight: 900;
 	}
 }
+
+.nav_group {
+	flex: 1 0 auto;
+
+	padding: 0 40px;
+	margin-top: 4px;
+
+	.lessons {
+		font-family: var(--nav__header-font-family);
+		font-size: var(--nav__header-font-size);
+		color: var(--nav__header-font-color);
+	}
+}
