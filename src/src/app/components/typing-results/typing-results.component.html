@@ -6,8 +6,12 @@
 		}
 	</div>
 	<div [ngClass]="{ result_tool_bar: true }">
+		@if(id) {
 		<button (click)="previousLesson()">◁</button>
+		}
 		<button (click)="refreshLesson()">↻</button>
+		@if(id) {
 		<button (click)="nextLesson()">▷</button>
+		}
 	</div>
 </div>

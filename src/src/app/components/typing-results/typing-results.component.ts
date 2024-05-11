@@ -19,13 +19,15 @@ export class TypingResultsComponent {
 	@Input()
 	public lesson: LessonItemModel;
 	@Input()
-	public id: number;
+	public id: number | undefined;
 
 	constructor(private router: Router) {}
 
 	public previousLesson() {
-		if (this.id === 1) {
-			this.router.navigate(['/']);
+		if (!this.id) {
+			this.refreshTrigger.emit();
+		} else if (this.id === 1) {
+			this.router.navigate(['/lessons']);
 		} else {
 			this.router.navigate([`/lesson/${this.id - 1}`]);
 		}
@@ -36,10 +38,10 @@ export class TypingResultsComponent {
 	}
 
 	public nextLesson() {
-		let lessons = LessonConstants.GetDefaultLessons();
-
-		if (this.id + 1 > lessons.length) {
-			this.router.navigate(['/']);
+		if (!this.id) {
+			this.refreshTrigger.emit();
+		} else if (this.id + 1 > LessonConstants.GetDefaultLessons().length) {
+			this.router.navigate(['/lessons']);
 		} else {
 			this.router.navigate([`/lesson/${this.id + 1}`]);
 		}
