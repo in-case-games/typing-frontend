@@ -3,7 +3,7 @@ import { NavButtonModel } from './nav-button.model';
 export class NavButtonConstants {
 	public static Models: NavButtonModel[] = [
 		{
-			url: '/partners',
+			url: 'https://t.me/x_DarkBull_x',
 			signature: 'Партнерам',
 			image: {
 				src: 'assets/images/icons/peoples.svg',
@@ -13,7 +13,7 @@ export class NavButtonConstants {
 			},
 		},
 		{
-			url: 'https://google.com',
+			url: 'https://github.com/in-case-games',
 			signature: 'Наши проекты',
 			image: {
 				src: 'assets/images/icons/setting.svg',

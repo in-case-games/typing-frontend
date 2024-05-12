@@ -40,7 +40,9 @@
 			<hand-right [lesson]="lesson"></hand-right>
 		</div>
 		<div [ngClass]="{ tool_bar: true }">
+			<button (click)="previousLesson()">◁</button>
 			<button (click)="refreshLesson()">↻</button>
+			<button (click)="nextLesson()">▷</button>
 		</div>
 		} @else {
 		<typing-results

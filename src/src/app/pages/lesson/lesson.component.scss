@@ -67,7 +67,8 @@
 
 .tool_bar {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	width: 300px;
 
 	button {
 		font-size: 30px;

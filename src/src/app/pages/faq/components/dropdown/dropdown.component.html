@@ -1,0 +1,9 @@
+<div [ngClass]="{ dropdown: true }" (click)="setIsShow()">
+	<div [ngClass]="{ question: true }">
+		<div [ngClass]="{ button_show: true }">{{ isShow ? '-' : '+' }}</div>
+		<div [ngClass]="{ text: true }">{{ faq.question }}</div>
+	</div>
+	@if(isShow) {
+	<div [ngClass]="{ answer: true }">{{ faq.answer }}</div>
+	}
+</div>
