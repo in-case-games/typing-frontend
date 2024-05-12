@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LessonConstants } from 'src/app/common/constants/lesson.constants';
 import { IGenerationService } from 'src/app/common/interfaces/generation.interface';
@@ -42,6 +42,7 @@ export class LessonPageComponent {
 
 	constructor(
 		@Inject('IGenerationService') private generationService: IGenerationService,
+		private router: Router,
 		private route: ActivatedRoute
 	) {
 		this._routeSubscription = route.params.subscribe(params => {
@@ -50,11 +51,31 @@ export class LessonPageComponent {
 		});
 	}
 
+	public previousLesson() {
+		if (!this.id) {
+			this.refreshLesson();
+		} else if (this.id === 1) {
+			this.router.navigate(['/lessons']);
+		} else {
+			this.router.navigate([`/lesson/${this.id - 1}`]);
+		}
+	}
+
 	refreshLesson() {
 		this.lesson = LessonConstants.GetDefaultLessons()[this.id - 1];
 
 		this.lesson.words = this.generationService.RandomSelectionWordsByLesson(
 			this.lesson
 		);
+	}
+
+	public nextLesson() {
+		if (!this.id) {
+			this.refreshLesson();
+		} else if (this.id + 1 > LessonConstants.GetDefaultLessons().length) {
+			this.router.navigate(['/lessons']);
+		} else {
+			this.router.navigate([`/lesson/${this.id + 1}`]);
+		}
 	}
 }

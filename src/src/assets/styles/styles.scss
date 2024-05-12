@@ -7,6 +7,16 @@ html {
 
 	overflow-x: hidden;
 	user-select: none;
+
+	body::-webkit-scrollbar {
+		width: 5px;
+		background-color: var(--scroll-bar-background-color);
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background-color: var(--scroll-bar__thumb-background-color);
+		border-radius: 5px;
+	}
 }
 
 root {

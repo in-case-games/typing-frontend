@@ -196,8 +196,24 @@ export class LessonConstants {
 				)
 			),
 			new LessonItemModel(
-				'кг гк',
+				'я. .я',
 				10,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(
+					['я', '.'],
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					undefined,
+					false
+				)
+			),
+			new LessonItemModel(
+				'кг гк',
+				11,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
@@ -213,7 +229,7 @@ export class LessonConstants {
 			),
 			new LessonItemModel(
 				'уш шу',
-				11,
+				12,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
@@ -229,7 +245,7 @@ export class LessonConstants {
 			),
 			new LessonItemModel(
 				'цщ щц',
-				12,
+				13,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
@@ -245,7 +261,7 @@ export class LessonConstants {
 			),
 			new LessonItemModel(
 				'йз зй',
-				13,
+				14,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
@@ -261,7 +277,7 @@ export class LessonConstants {
 			),
 			new LessonItemModel(
 				'ен не',
-				14,
+				15,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
@@ -277,27 +293,11 @@ export class LessonConstants {
 			),
 			new LessonItemModel(
 				'хъ ъх',
-				15,
-				Language.Russian,
-				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['х', 'ъ'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
-			),
-			new LessonItemModel(
-				'я. .я',
 				16,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
-					['я', '.'],
+					['х', 'ъ'],
 					undefined,
 					undefined,
 					undefined,
@@ -324,12 +324,12 @@ export class LessonConstants {
 				)
 			),
 			new LessonItemModel(
-				'яэ. .эя',
+				'ёхъ ъхё',
 				18,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
-					['е', 'п', 'и'],
+					['ё', 'х', 'ъ'],
 					undefined,
 					undefined,
 					undefined,
@@ -340,12 +340,12 @@ export class LessonConstants {
 				)
 			),
 			new LessonItemModel(
-				'хъэ эхъ',
+				'яёэ эёя',
 				19,
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
-					['х', 'ъ', 'э'],
+					['я', 'ё', 'э'],
 					undefined,
 					undefined,
 					undefined,
@@ -361,7 +361,7 @@ export class LessonConstants {
 				Language.Russian,
 				DegreeDifficulty.Easy,
 				new LessonParamsModel(
-					['х', 'ъ', 'э'],
+					['х', 'ъ', '.'],
 					undefined,
 					undefined,
 					undefined,

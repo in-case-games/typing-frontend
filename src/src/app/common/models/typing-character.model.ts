@@ -1,3 +1,4 @@
+import { KeyCode } from '../enums/key-code.enum';
 import { TypingStatus } from '../enums/typing-status.enum';
 import { KeyModel } from './key.model';
 import { LessonParamsModel } from './lesson-params.model';
@@ -17,7 +18,11 @@ export class TypingCharacterModel {
 	}
 
 	public Next($event: any, params: LessonParamsModel): boolean {
-		if ($event.code === this.key.code) {
+		if (
+			$event.code === this.key.code ||
+			$event.key === this.key.display ||
+			($event.code === KeyCode.KeyT && this.key.code === KeyCode.Backquote)
+		) {
 			if (this.attempts < params.maxCharAttempt) {
 				this.status = TypingStatus.Done;
 			} else {
