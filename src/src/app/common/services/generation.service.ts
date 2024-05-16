@@ -38,7 +38,7 @@ export class GenerationService implements IGenerationService {
 
 				LessonConstants.KeyboardLayoutRu.find(v =>
 					v.find(va => {
-						if (va.display === char) {
+						if (va.display.toLowerCase() === char.toLowerCase()) {
 							key = va;
 							return true;
 						}

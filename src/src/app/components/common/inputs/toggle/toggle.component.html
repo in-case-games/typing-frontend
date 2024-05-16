@@ -1,0 +1,10 @@
+<div [ngClass]="{ toggle__wrapper: true }">
+	<p [ngClass]="{ title: true }">{{ title }}</p>
+	<input
+		id="{{ toggleId }}"
+		type="checkbox"
+		[ngModel]="value"
+		(ngModelChange)="onValueChange($event)"
+	/>
+	<label for="{{ toggleId }}">Toggle</label>
+</div>

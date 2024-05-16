@@ -1,6 +1,7 @@
 import { LessonConstants } from '../constants/lesson.constants';
 import { KeyCode } from '../enums/key-code.enum';
 import { KeyFinger } from '../enums/key-finger.enum';
+import { GlobalLessonParams } from './global-lesson-params.model';
 import { KeyModel } from './key.model';
 import { TypingCharacterModel } from './typing-character.model';
 
@@ -15,13 +16,13 @@ export class LessonParamsModel {
 	public readonly includedPunctuationMarks: TypingCharacterModel[] = [];
 	public readonly ignoreChars: TypingCharacterModel[] =
 		LessonConstants.DefaultIgnoreChars;
-	public readonly maxWords: number = 50;
-	public readonly maxCharForWord: number = 5;
-	public readonly maxCharAttempt: number = 1;
-	public readonly allowErrors: boolean = true;
-	public readonly allowCapitalLetters: boolean = false;
-	public readonly allowNumbers: boolean = false;
-	public readonly enablePreview: boolean = false;
+	public maxWords: number = 50;
+	public maxCharForWord: number = 5;
+	public maxCharAttempt: number = 1;
+	public allowErrors: boolean = false;
+	public allowCapitalLetters: boolean = false;
+	public allowNumbers: boolean = false;
+	public enablePreview: boolean = false;
 	public enableFishText: boolean = false;
 
 	constructor(
@@ -37,7 +38,7 @@ export class LessonParamsModel {
 		maxWords: number = 50,
 		maxCharForWord: number = 5,
 		maxCharAttempt: number = 1,
-		allowErrors: boolean = true,
+		allowErrors: boolean = false,
 		allowCapitalLetters: boolean = false,
 		allowNumbers: boolean = false,
 		enablePreview: boolean = false,
@@ -71,5 +72,16 @@ export class LessonParamsModel {
 		this.allowNumbers = allowNumbers;
 		this.enablePreview = enablePreview;
 		this.enableFishText = enableFishText;
+	}
+
+	public PullGlobalParams(params: GlobalLessonParams) {
+		this.maxWords = params.maxWords;
+		this.maxCharForWord = params.maxCharForWord;
+		this.maxCharAttempt = params.maxCharAttempt;
+		this.allowErrors = params.allowErrors;
+		this.allowCapitalLetters = params.allowCapitalLetters;
+		this.allowNumbers = params.allowNumbers;
+		this.enablePreview = params.enablePreview;
+		this.enableFishText = params.enableFishText;
 	}
 }

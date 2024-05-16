@@ -1,0 +1,28 @@
+<div [ngClass]="{ container: true }">
+	<div [ngClass]="{ settings__wrapper: true }">
+		<h1 [ngClass]="{ title: true }">Настройки уроков</h1>
+		<div [ngClass]="{ settings: true }">
+			<toggle
+				[title]="'Разрешить ошибки'"
+				[(value)]="params.allowErrors"
+			></toggle>
+			<toggle
+				[title]="'Разрешить заглавные буквы'"
+				[(value)]="params.allowCapitalLetters"
+			></toggle>
+			<toggle
+				[title]="'Разрешить цифры'"
+				[(value)]="params.allowNumbers"
+			></toggle>
+			<toggle
+				[title]="'Разрешить предпросмотр'"
+				[(value)]="params.enablePreview"
+			></toggle>
+			<toggle
+				[title]="'Генерация слов'"
+				[(value)]="params.enableFishText"
+			></toggle>
+		</div>
+		<button type="submit" (click)="onClickSave()">Сохранить</button>
+	</div>
+</div>
