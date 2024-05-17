@@ -22,6 +22,27 @@
 				[title]="'Генерация слов'"
 				[(value)]="params.enableFishText"
 			></toggle>
+			<common-input
+				[title]="'Макс слов'"
+				[(value)]="params.maxWords"
+				[type]="'range'"
+				[min]="1"
+				[max]="100"
+			></common-input>
+			<common-input
+				[title]="'Макс символов'"
+				[(value)]="params.maxCharForWord"
+				[type]="'range'"
+				[min]="1"
+				[max]="20"
+			></common-input>
+			<common-input
+				[title]="'Макс попыток для ввода'"
+				[(value)]="params.maxCharAttempt"
+				[type]="'range'"
+				[min]="1"
+				[max]="5"
+			></common-input>
 		</div>
 		<button type="submit" (click)="onClickSave()">Сохранить</button>
 	</div>
