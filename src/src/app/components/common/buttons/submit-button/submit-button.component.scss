@@ -1,0 +1,19 @@
+button {
+	width: 150px;
+
+	background-color: var(--submit-button-background-color);
+	color: var(--submit-button-font-color);
+	border-radius: 10px;
+
+	padding: 10px 20px;
+	margin-top: 10px;
+
+	transition: 200ms ease all;
+	cursor: pointer;
+
+	&:hover {
+		width: 180px;
+
+		transition: 200ms ease all;
+	}
+}

@@ -5,6 +5,7 @@ import { DegreeDifficulty } from 'src/app/common/enums/degree-difficulty.enum';
 import { Language } from 'src/app/common/enums/language.enum';
 import { IFishTextGeneratorService } from 'src/app/common/interfaces/fish-text-generator.interface';
 import { IGenerationService } from 'src/app/common/interfaces/generation.interface';
+import { GlobalLessonParams } from 'src/app/common/models/global-lesson-params.model';
 import { LessonItemModel } from 'src/app/common/models/lesson-item.model';
 import { LessonParamsModel } from 'src/app/common/models/lesson-params.model';
 import { TypingCharacterModel } from 'src/app/common/models/typing-character.model';
@@ -57,12 +58,21 @@ export class SandboxPageComponent implements OnInit {
 
 	refreshLesson() {
 		this.lesson = new LessonItemModel(
-			'ао оа',
-			1,
+			'sandbox',
+			0,
 			Language.Russian,
 			DegreeDifficulty.Easy,
 			new LessonParamsModel([])
 		);
+		const params: GlobalLessonParams = JSON.parse(
+			localStorage.getItem('params')
+		);
+
+		if (params) {
+			this.lesson.params.PullGlobalParams(params);
+		} else {
+			this.lesson.params.allowErrors = true;
+		}
 
 		this.textGenerator.getFishText(500).subscribe({
 			next: (data: any) =>

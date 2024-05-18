@@ -45,7 +45,23 @@ export class LessonConstants {
 			new LessonsGroupModel('Базовая серия 1', defaultLessons.slice(0, 5)),
 			new LessonsGroupModel('Базовая серия 2', defaultLessons.slice(5, 10)),
 			new LessonsGroupModel('Базовая серия 3', defaultLessons.slice(10, 15)),
-			new LessonsGroupModel('Базовая серия 4', defaultLessons.slice(15, 20)),
+			new LessonsGroupModel(
+				'Базовая и тройная серия',
+				defaultLessons.slice(15, 20)
+			),
+			new LessonsGroupModel('Тройная серия 1', defaultLessons.slice(20, 25)),
+			new LessonsGroupModel('Тройная серия 2', defaultLessons.slice(25, 30)),
+			new LessonsGroupModel('Тройная серия 3', defaultLessons.slice(30, 35)),
+			new LessonsGroupModel(
+				'Одной рукой серия 1',
+				defaultLessons.slice(35, 40)
+			),
+			new LessonsGroupModel(
+				'Одной рукой серия 2',
+				defaultLessons.slice(40, 45)
+			),
+			new LessonsGroupModel('Большая серия 1', defaultLessons.slice(45, 50)),
+			new LessonsGroupModel('Большая серия 2', defaultLessons.slice(50, 55)),
 		];
 	}
 
@@ -56,320 +72,538 @@ export class LessonConstants {
 				1,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['а', 'о'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['а', 'о'])
 			),
 			new LessonItemModel(
 				'вл лв',
 				2,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['в', 'л'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['в', 'л'])
 			),
 			new LessonItemModel(
 				'ыд ды',
 				3,
 				Language.Russian,
 				DegreeDifficulty.Middle,
-				new LessonParamsModel(
-					['ы', 'д'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['ы', 'д'])
 			),
 			new LessonItemModel(
 				'фж жф',
 				4,
 				Language.Russian,
 				DegreeDifficulty.Hard,
-				new LessonParamsModel(
-					['ф', 'ж'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['ф', 'ж'])
 			),
 			new LessonItemModel(
 				'пр рп',
 				5,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['п', 'р'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['п', 'р'])
 			),
 			new LessonItemModel(
 				'мь ьм',
 				6,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['м', 'ь'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['м', 'ь'])
 			),
 			new LessonItemModel(
 				'сб бс',
 				7,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['с', 'б'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['с', 'б'])
 			),
 			new LessonItemModel(
 				'чю юч',
 				8,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['ч', 'ю'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['ч', 'ю'])
 			),
 			new LessonItemModel(
 				'ит ти',
 				9,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['и', 'т'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['и', 'т'])
 			),
 			new LessonItemModel(
 				'я. .я',
 				10,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['я', '.'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['я', '.'])
 			),
 			new LessonItemModel(
 				'кг гк',
 				11,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['к', 'г'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['к', 'г'])
 			),
 			new LessonItemModel(
 				'уш шу',
 				12,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['у', 'ш'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['у', 'ш'])
 			),
 			new LessonItemModel(
 				'цщ щц',
 				13,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['ц', 'щ'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['ц', 'щ'])
 			),
 			new LessonItemModel(
 				'йз зй',
 				14,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['й', 'з'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['й', 'з'])
 			),
 			new LessonItemModel(
 				'ен не',
 				15,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['е', 'н'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['е', 'н'])
 			),
 			new LessonItemModel(
 				'хъ ъх',
 				16,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['х', 'ъ'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['х', 'ъ'])
 			),
 			new LessonItemModel(
 				'э\\ \\э',
 				17,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['э', '\\'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['э', '\\'])
 			),
 			new LessonItemModel(
 				'ёхъ ъхё',
 				18,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['ё', 'х', 'ъ'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['ё', 'х', 'ъ'])
 			),
 			new LessonItemModel(
 				'яёэ эёя',
 				19,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['я', 'ё', 'э'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['я', 'ё', 'э'])
 			),
 			new LessonItemModel(
 				'хъ. .хъ',
 				20,
 				Language.Russian,
 				DegreeDifficulty.Easy,
-				new LessonParamsModel(
-					['х', 'ъ', '.'],
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					undefined,
-					false
-				)
+				new LessonParamsModel(['х', 'ъ', '.'])
+			),
+			new LessonItemModel(
+				'епи нрт',
+				21,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['е', 'п', 'и', 'н', 'р', 'т'])
+			),
+			new LessonItemModel(
+				'кам гот',
+				22,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['к', 'а', 'м', 'г', 'о', 'ь'])
+			),
+			new LessonItemModel(
+				'увс шлб',
+				23,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['у', 'в', 'с', 'ш', 'л', 'б'])
+			),
+			new LessonItemModel(
+				'цыч щдю',
+				24,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['ц', 'ы', 'ч', 'щ', 'д', 'ю'])
+			),
+			new LessonItemModel(
+				'йфя зж.',
+				25,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['й', 'ф', 'я', 'з', 'ж', '.'])
+			),
+			new LessonItemModel(
+				'фыв ждл',
+				26,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['ф', 'ы', 'в', 'л', 'д', 'ж'])
+			),
+			new LessonItemModel(
+				'пав рол',
+				27,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['п', 'а', 'в', 'р', 'о', 'л'])
+			),
+			new LessonItemModel(
+				'ячс .юб',
+				28,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['я', 'ч', 'с', '.', 'ю', 'б'])
+			),
+			new LessonItemModel(
+				'сми бьт',
+				29,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['с', 'м', 'и', 'б', 'ь', 'т'])
+			),
+			new LessonItemModel(
+				'йцу зщш',
+				30,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['й', 'ц', 'у', 'з', 'щ', 'ш'])
+			),
+			new LessonItemModel(
+				'уке шгн',
+				31,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['у', 'к', 'е', 'ш', 'г', 'н'])
+			),
+			new LessonItemModel(
+				'кпм грт',
+				32,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['к', 'п', 'м', 'г', 'р', 'т'])
+			),
+			new LessonItemModel(
+				'уас шоь',
+				33,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['у', 'а', 'с', 'ш', 'о', 'ь'])
+			),
+			new LessonItemModel(
+				'цвч щлб',
+				34,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['ц', 'в', 'ч', 'щ', 'л', 'б'])
+			),
+			new LessonItemModel(
+				'йыя здю',
+				35,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['й', 'ы', 'я', 'з', 'д', 'ю'])
+			),
+			new LessonItemModel(
+				'уае вкп',
+				36,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['у', 'а', 'е', 'в', 'к', 'п'])
+			),
+			new LessonItemModel(
+				'саи вмп',
+				37,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['с', 'а', 'и', 'в', 'м', 'п'])
+			),
+			new LessonItemModel(
+				'йыу фцв',
+				38,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['й', 'ы', 'у', 'ф', 'ц', 'в'])
+			),
+			new LessonItemModel(
+				'яыс фчв',
+				39,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['я', 'ы', 'с', 'ф', 'ч', 'в'])
+			),
+			new LessonItemModel(
+				'йчу яес',
+				40,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['й', 'ч', 'у', 'я', 'е', 'с'])
+			),
+			new LessonItemModel(
+				'нош ргл',
+				41,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['н', 'о', 'ш', 'р', 'г', 'л'])
+			),
+			new LessonItemModel(
+				'рьл тоб',
+				42,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['р', 'ь', 'л', 'т', 'о', 'б'])
+			),
+			new LessonItemModel(
+				'шдз лщж',
+				43,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['ш', 'д', 'з', 'л', 'щ', 'ж'])
+			),
+			new LessonItemModel(
+				'люж бд.',
+				44,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['л', 'ю', 'ж', 'б', 'д', '.'])
+			),
+			new LessonItemModel(
+				'хъэ эхъ',
+				45,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel(['х', 'ъ', 'э'])
+			),
+			new LessonItemModel(
+				'йцукенгшщз',
+				46,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'й',
+					'ц',
+					'у',
+					'к',
+					'е',
+					'н',
+					'г',
+					'ш',
+					'щ',
+					'з',
+				])
+			),
+			new LessonItemModel(
+				'фывапролдж',
+				47,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'ф',
+					'ы',
+					'в',
+					'а',
+					'п',
+					'р',
+					'о',
+					'л',
+					'д',
+					'ж',
+				])
+			),
+			new LessonItemModel(
+				'ячсмитьбю.',
+				48,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'я',
+					'ч',
+					'с',
+					'м',
+					'и',
+					'т',
+					'ь',
+					'б',
+					'ю',
+					'.',
+				])
+			),
+			new LessonItemModel(
+				'хъэёе.юзж\\',
+				49,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'х',
+					'ъ',
+					'э',
+					'ё',
+					'е',
+					'.',
+					'ю',
+					'з',
+					'ж',
+					'\\',
+				])
+			),
+			new LessonItemModel(
+				'епинрткамг',
+				50,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'е',
+					'п',
+					'и',
+					'н',
+					'р',
+					'т',
+					'к',
+					'а',
+					'м',
+					'г',
+				])
+			),
+			new LessonItemModel(
+				'оьувсшлбцы',
+				51,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'о',
+					'ь',
+					'у',
+					'в',
+					'с',
+					'ш',
+					'л',
+					'б',
+					'ц',
+					'ы',
+				])
+			),
+			new LessonItemModel(
+				'чщдюйфязж.',
+				52,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'ч',
+					'щ',
+					'д',
+					'ю',
+					'й',
+					'ф',
+					'я',
+					'з',
+					'ж',
+					'.',
+				])
+			),
+			new LessonItemModel(
+				'1 и 2 строчка',
+				53,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'й',
+					'ц',
+					'у',
+					'к',
+					'е',
+					'ф',
+					'ы',
+					'в',
+					'а',
+					'п',
+					'н',
+					'г',
+					'ш',
+					'щ',
+					'з',
+					'р',
+					'о',
+					'л',
+					'д',
+					'ж',
+				])
+			),
+			new LessonItemModel(
+				'1 и 3 строчка',
+				54,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'я',
+					'ч',
+					'с',
+					'м',
+					'и',
+					'т',
+					'ь',
+					'б',
+					'ю',
+					'.',
+					'й',
+					'ц',
+					'у',
+					'к',
+					'е',
+					'н',
+					'г',
+					'ш',
+					'щ',
+					'з',
+				])
+			),
+			new LessonItemModel(
+				'Все буквы',
+				55,
+				Language.Russian,
+				DegreeDifficulty.Easy,
+				new LessonParamsModel([
+					'й',
+					'ц',
+					'у',
+					'к',
+					'е',
+					'ф',
+					'ы',
+					'в',
+					'а',
+					'п',
+					'н',
+					'г',
+					'ш',
+					'щ',
+					'з',
+					'р',
+					'о',
+					'л',
+					'д',
+					'ж',
+					'я',
+					'ч',
+					'с',
+					'м',
+					'и',
+					'т',
+					'ь',
+					'б',
+					'ю',
+					'.',
+					'\\',
+					'х',
+					'ъ',
+				])
 			),
 		];
 	}

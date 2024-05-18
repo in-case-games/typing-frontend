@@ -21,9 +21,13 @@
 		</div>
 		<typing-input-area [lesson]="lesson"></typing-input-area>
 		<div [ngClass]="{ hints__wrapper: true }">
+			@if(lesson.params.enableHandHint) {
 			<hand-left [lesson]="lesson"></hand-left>
+			}
 			<keyboard-hint [lesson]="lesson"></keyboard-hint>
+			@if(lesson.params.enableHandHint) {
 			<hand-right [lesson]="lesson"></hand-right>
+			}
 		</div>
 		<div [ngClass]="{ tool_bar: true }">
 			<button (click)="refreshLesson()">↻</button>
