@@ -7,6 +7,8 @@ export class GlobalLessonParams {
 	public allowNumbers: boolean = false;
 	public enablePreview: boolean = false;
 	public enableFishText: boolean = false;
+	public enableKeyboardHint: boolean = true;
+	public enableHandHint: boolean = true;
 
 	constructor(
 		maxWords: number = 50,
@@ -16,7 +18,9 @@ export class GlobalLessonParams {
 		allowCapitalLetters: boolean = false,
 		allowNumbers: boolean = false,
 		enablePreview: boolean = false,
-		enableFishText: boolean = false
+		enableFishText: boolean = false,
+		enableKeyboardHint: boolean = true,
+		enableHandHint: boolean = true
 	) {
 		this.maxWords = maxWords;
 		this.maxCharForWord = maxCharForWord;
@@ -26,5 +30,7 @@ export class GlobalLessonParams {
 		this.allowNumbers = allowNumbers;
 		this.enablePreview = enablePreview;
 		this.enableFishText = enableFishText;
+		this.enableKeyboardHint = enableKeyboardHint;
+		this.enableHandHint = enableHandHint;
 	}
 }

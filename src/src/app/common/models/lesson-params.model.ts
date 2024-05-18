@@ -24,6 +24,8 @@ export class LessonParamsModel {
 	public allowNumbers: boolean = false;
 	public enablePreview: boolean = false;
 	public enableFishText: boolean = false;
+	public enableKeyboardHint: boolean = true;
+	public enableHandHint: boolean = true;
 
 	constructor(
 		includedChars: string[],
@@ -42,7 +44,9 @@ export class LessonParamsModel {
 		allowCapitalLetters: boolean = false,
 		allowNumbers: boolean = false,
 		enablePreview: boolean = false,
-		enableFishText: boolean = false
+		enableFishText: boolean = false,
+		enableKeyboardHint: boolean = true,
+		enableHandHint: boolean = true
 	) {
 		this.includedCharacters = [];
 
@@ -72,6 +76,8 @@ export class LessonParamsModel {
 		this.allowNumbers = allowNumbers;
 		this.enablePreview = enablePreview;
 		this.enableFishText = enableFishText;
+		this.enableKeyboardHint = enableKeyboardHint;
+		this.enableHandHint = enableHandHint;
 	}
 
 	public PullGlobalParams(params: GlobalLessonParams) {
@@ -83,5 +89,7 @@ export class LessonParamsModel {
 		this.allowNumbers = params.allowNumbers;
 		this.enablePreview = params.enablePreview;
 		this.enableFishText = params.enableFishText;
+		this.enableKeyboardHint = params.enableKeyboardHint;
+		this.enableHandHint = params.enableHandHint;
 	}
 }

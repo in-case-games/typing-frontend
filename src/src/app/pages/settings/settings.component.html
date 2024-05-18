@@ -22,6 +22,14 @@
 				[title]="'Генерация слов'"
 				[(value)]="params.enableFishText"
 			></toggle>
+			<toggle
+				[title]="'Отображение клавиатуры'"
+				[(value)]="params.enableKeyboardHint"
+			></toggle>
+			<toggle
+				[title]="'Отображение рук'"
+				[(value)]="params.enableHandHint"
+			></toggle>
 			<common-input
 				[title]="'Макс слов'"
 				[(value)]="params.maxWords"
@@ -44,6 +52,9 @@
 				[max]="5"
 			></common-input>
 		</div>
-		<button type="submit" (click)="onClickSave()">Сохранить</button>
+		<submit-button
+			[title]="'Сохранить'"
+			(onClicked)="onClickSave()"
+		></submit-button>
 	</div>
 </div>

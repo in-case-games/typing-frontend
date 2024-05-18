@@ -1,13 +1,15 @@
-.wrapper {
-	display: flex;
-	flex-direction: column;
-
+.keyboard_wrapper {
 	width: 640px;
 	min-width: 640px;
 
-	background: var(--typing-keyboard-hint-background-color);
-	border: 1px solid var(--typing-keyboard-hint-border-color);
-	border-radius: 4px;
+	.keyboard {
+		display: flex;
+		flex-direction: column;
+
+		background: var(--typing-keyboard-hint-background-color);
+		border: 1px solid var(--typing-keyboard-hint-border-color);
+		border-radius: 4px;
+	}
 }
 
 .row {
