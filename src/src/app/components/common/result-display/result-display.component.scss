@@ -1,0 +1,21 @@
+.result_display {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
+
+	p {
+		padding: 0;
+		margin: 0;
+	}
+
+	.title {
+		font-size: 30px;
+		font-family: var(--typing-result-display__title-font-family);
+		color: var(--typing-result-display__title-font-color);
+	}
+
+	.value {
+		font-size: 40px;
+	}
+}

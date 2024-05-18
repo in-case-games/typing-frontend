@@ -1,0 +1,46 @@
+.container {
+	max-width: 1720px;
+
+	margin: 0 auto;
+	padding: 20px 40px 0 40px;
+}
+
+.home__wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	height: 100%;
+	width: 100%;
+
+	.group {
+		.title {
+			font-size: 30px;
+			border-bottom: 3px solid var(--lessons-group-border-color);
+
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.lessons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		width: 100%;
+
+		lesson-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			height: 240px;
+			width: 180px;
+
+			margin: 20px;
+		}
+	}
+}

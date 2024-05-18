@@ -1,0 +1,42 @@
+<div [ngClass]="{ container: true }">
+	<div [ngClass]="{ lesson__wrapper: true }">
+		@if(!lesson.isEnd) {
+		<div
+			[ngClass]="{ title: true }"
+			[style.align-items]="
+				!lesson.params.enablePreview && !lesson.isStart ? 'center' : 'flex-end'
+			"
+		>
+			<p
+				[ngClass]="{ counter: true }"
+				[style.visibility]="
+					!lesson.params.enablePreview && !lesson.isStart ? 'hidden' : 'visible'
+				"
+				[style.opacity]="
+					!lesson.params.enablePreview && !lesson.isStart ? '0' : '1'
+				"
+			>
+				{{ lesson.positionWord }} / {{ lesson.words.length }}
+			</p>
+		</div>
+		<typing-input-area [lesson]="lesson"></typing-input-area>
+		<div [ngClass]="{ hints__wrapper: true }">
+			@if(lesson.params.enableHandHint) {
+			<hand-left [lesson]="lesson"></hand-left>
+			}
+			<keyboard-hint [lesson]="lesson"></keyboard-hint>
+			@if(lesson.params.enableHandHint) {
+			<hand-right [lesson]="lesson"></hand-right>
+			}
+		</div>
+		<div [ngClass]="{ tool_bar: true }">
+			<button (click)="refreshLesson()">↻</button>
+		</div>
+		} @else {
+		<typing-results
+			[lesson]="lesson"
+			(refreshTrigger)="refreshLesson()"
+		></typing-results>
+		}
+	</div>
+</div>

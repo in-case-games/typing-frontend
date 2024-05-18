@@ -1,0 +1,33 @@
+.container {
+	max-width: 1720px;
+
+	margin: 0 auto;
+	padding: 20px 40px 0 40px;
+}
+
+.settings__wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	height: 100%;
+	width: 100%;
+
+	.settings {
+		toggle {
+			margin: 5px;
+		}
+		common-input {
+			margin: 5px;
+		}
+	}
+}
+
+.tittle {
+	font-family: 'Nunito';
+	font-size: 40px;
+
+	margin: 5px 0;
+}

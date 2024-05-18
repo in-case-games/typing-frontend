@@ -1,0 +1,47 @@
+.dropdown {
+	width: 100%;
+
+	font-family: 'RobotoMono';
+
+	margin: 5px 0;
+
+	cursor: pointer;
+
+	.question {
+		display: flex;
+		align-items: center;
+
+		width: 700px;
+
+		background: var(--faq-background-color);
+		color: var(--faq-font-color);
+		border-radius: 15px;
+
+		padding: 20px;
+
+		.text {
+			font-family: 'Nunito';
+			font-size: 20px;
+		}
+
+		.button_show {
+			font-size: 40px;
+			margin-right: 5px;
+
+			color: #1e1e1e;
+		}
+	}
+
+	.answer {
+		width: 700px;
+
+		background: var(--faq__answer-background-color);
+		color: var(--faq__answer-font-color);
+
+		padding: 20px;
+
+		border-radius: 0 0 15px 15px;
+
+		white-space: pre-line;
+	}
+}

@@ -1,0 +1,18 @@
+<div [ngClass]="{ input__wrapper: true }">
+	<p [ngClass]="{ title: true }">{{ title }}</p>
+	@if(type || type === "number" || type === "range") {
+	<div [ngClass]="{ input_range: true }">
+		<input
+			type="range"
+			min="{{ min }}"
+			max="{{ max }}"
+			step="1"
+			[ngModel]="value"
+			(ngModelChange)="onValueChange($event)"
+		/>
+		<div [ngClass]="{ output: true }">
+			<output>{{ value }}</output>
+		</div>
+	</div>
+	}
+</div>

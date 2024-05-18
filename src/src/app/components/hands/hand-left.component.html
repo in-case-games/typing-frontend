@@ -1,0 +1,13 @@
+<div [ngClass]="{ hand: true }">
+	<img src="assets/images/main/hand-left.png" [style.height]="'200px'" />
+	<div
+		[ngClass]="{
+			point: true,
+			point_finger_big: lesson && lesson.keyboard && lesson.keyboard.activeKey && (lesson.keyboard.activeKey.finger === 'Big' || lesson.keyboard.activeKey.finger === 'BigLeft'),
+			point_finger_index: lesson && lesson.keyboard && lesson.keyboard.activeKey && lesson.keyboard.activeKey.finger === 'IndexLeft',
+			point_finger_middle: lesson && lesson.keyboard && lesson.keyboard.activeKey && lesson.keyboard.activeKey.finger === 'MiddleLeft',
+			point_finger_ring: lesson && lesson.keyboard && lesson.keyboard.activeKey && lesson.keyboard.activeKey.finger === 'RingLeft',
+			point_finger_pinky: lesson && lesson.keyboard && lesson.keyboard.activeKey && lesson.keyboard.activeKey.finger === 'PinkyLeft',
+		}"
+	></div>
+</div>

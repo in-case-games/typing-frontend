@@ -1,6 +1,55 @@
 <div [ngClass]="{ container: true }">
 	<div [ngClass]="{ lesson__wrapper: true }">
-		<h1>Lesson {{ id }}</h1>
+		@if(!lesson.isEnd) {
+		<div
+			[ngClass]="{ title: true }"
+			[style.align-items]="
+				!lesson.params.enablePreview && !lesson.isStart ? 'center' : 'flex-end'
+			"
+		>
+			<h1
+				[ngClass]="{ topic: true }"
+				[style.visibility]="
+					!lesson.params.enablePreview && !lesson.isStart ? 'visible' : 'hidden'
+				"
+				[style.display]="
+					!lesson.params.enablePreview && !lesson.isStart ? 'inline' : 'none'
+				"
+				[style.opacity]="
+					!lesson.params.enablePreview && !lesson.isStart ? '1' : '0'
+				"
+			>
+				{{ lesson.topic }}
+			</h1>
+			<p
+				[ngClass]="{ counter: true }"
+				[style.visibility]="
+					!lesson.params.enablePreview && !lesson.isStart ? 'hidden' : 'visible'
+				"
+				[style.opacity]="
+					!lesson.params.enablePreview && !lesson.isStart ? '0' : '1'
+				"
+			>
+				{{ lesson.positionWord }} / {{ lesson.words.length }}
+			</p>
+		</div>
 		<typing-input-area [lesson]="lesson"></typing-input-area>
+		<div [ngClass]="{ hints__wrapper: true }">
+			<hand-left [lesson]="lesson"></hand-left>
+			<keyboard-hint [lesson]="lesson"></keyboard-hint>
+			<hand-right [lesson]="lesson"></hand-right>
+		</div>
+		<div [ngClass]="{ tool_bar: true }">
+			<button (click)="previousLesson()">◁</button>
+			<button (click)="refreshLesson()">↻</button>
+			<button (click)="nextLesson()">▷</button>
+		</div>
+		} @else {
+		<typing-results
+			[lesson]="lesson"
+			[id]="id"
+			(refreshTrigger)="refreshLesson()"
+		></typing-results>
+		}
 	</div>
 </div>

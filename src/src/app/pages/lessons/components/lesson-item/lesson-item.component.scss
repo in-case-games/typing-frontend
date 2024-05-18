@@ -1,0 +1,28 @@
+.lesson_item__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+
+	height: 220px;
+	width: 160px;
+
+	border: 1px solid;
+	font-family: var(--lesson-item-font-family);
+	font-size: var(--lesson-item-font-size);
+
+	transition: 200ms;
+
+	cursor: pointer;
+
+	&:hover {
+		height: 240px;
+		width: 180px;
+
+		transition: 200ms;
+	}
+
+	.topic {
+		text-align: center;
+	}
+}

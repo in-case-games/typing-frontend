@@ -3,23 +3,23 @@ import { NavButtonModel } from './nav-button.model';
 export class NavButtonConstants {
 	public static Models: NavButtonModel[] = [
 		{
-			url: '/partners',
+			url: 'https://t.me/x_DarkBull_x',
 			signature: 'Партнерам',
 			image: {
 				src: 'assets/images/icons/peoples.svg',
 				alt: 'Партнерам',
-				height: '45px',
-				width: '45px',
+				height: '25px',
+				width: '25px',
 			},
 		},
 		{
-			url: 'https://google.com',
+			url: 'https://github.com/in-case-games',
 			signature: 'Наши проекты',
 			image: {
 				src: 'assets/images/icons/setting.svg',
 				alt: 'Наши проекты',
-				height: '45px',
-				width: '45px',
+				height: '25px',
+				width: '25px',
 			},
 		},
 		{
@@ -28,8 +28,8 @@ export class NavButtonConstants {
 			image: {
 				src: 'assets/images/icons/faq.svg',
 				alt: 'FAQ',
-				height: '45px',
-				width: '45px',
+				height: '25px',
+				width: '25px',
 			},
 		},
 	];

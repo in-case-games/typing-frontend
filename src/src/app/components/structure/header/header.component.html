@@ -1,5 +1,11 @@
 <div [ngClass]="{ container: true }">
 	<nav [ngClass]="{ header__wrapper: true }">
 		<a [ngClass]="{ header_logo: true }" routerLink="">Typing InCase</a>
+		<div [ngClass]="{ nav_group: true }">
+			<a [ngClass]="{ lessons: true }" routerLink="lessons">Уроки</a>
+			<a [ngClass]="{ settings: true }" routerLink="settings">
+				<img alt="settings" src="assets/images/icons/settings.svg" />
+			</a>
+		</div>
 	</nav>
 </div>

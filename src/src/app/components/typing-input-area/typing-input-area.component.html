@@ -1,16 +1,33 @@
-<div [ngClass]="{ text_area: true }">
-	@for (word of lesson.words; track $index) { @for (char of word.chars; track
-	$index) {
-	<typing-character
-		[ngClass]="{
-			typing_word__active: word.status === 'active',
-			typing_character__done: char.status === 'done',
-			typing_character__mistake: char.status === 'mistake',
-			typing_character__miss: char.status === 'miss'
-		}"
-		[character]="char"
-		[params]="lesson.params"
-	></typing-character>
-	} }
+<div
+	[ngClass]="{ text_area: true }"
+	[style.margin-top.px]="-lesson.carriageMargin"
+	[style.-webkit-filter]="
+		!lesson.params.enablePreview && !lesson.isStart ? 'blur(4px)' : ''
+	"
+>
+	<div
+		*ngFor="let word of lesson.words; index as i"
+		[ngClass]="{ word: true, word__active: word.status === 'active' }"
+	>
+		<typing-character
+			*ngFor="let char of word.chars; index as j"
+			[ngClass]="{
+				typing_character__done: char.status === 'done',
+				typing_character__mistake: char.status === 'mistake',
+				typing_character__miss: char.status === 'miss'
+			}"
+			[character]="char"
+			[params]="lesson.params"
+		></typing-character>
+	</div>
 </div>
+<p
+	[ngClass]="{ text_before_start: true }"
+	[style.visibility]="
+		!lesson.params.enablePreview && !lesson.isStart ? 'visible' : 'hidden'
+	"
+	[style.opacity]="!lesson.params.enablePreview && !lesson.isStart ? '1' : '0'"
+>
+	Нажмите пробел
+</p>
 <typing-input (onKeydown)="onKeydown($event)"></typing-input>

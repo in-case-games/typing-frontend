@@ -1,0 +1,17 @@
+<div [ngClass]="{ container: true }">
+	<div [ngClass]="{ home__wrapper: true }">
+		@for (group of groups; track $index) {
+		<div [ngClass]="{ group: true }">
+			<h2 [ngClass]="{ title: true }">{{ group.title }}</h2>
+			<div [ngClass]="{ lessons: true }">
+				@for (lesson of group.lessons; track $index) {
+				<lesson-item
+					routerLink="/lesson/{{ lesson.number }}"
+					[lesson]="lesson"
+				></lesson-item>
+				}
+			</div>
+		</div>
+		}
+	</div>
+</div>

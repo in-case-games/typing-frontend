@@ -1,0 +1,10 @@
+<div [ngClass]="{ container: true }">
+	<div [ngClass]="{ faq__wrapper: true }">
+		<h1 [ngClass]="{ title: true }">Вопросы и ответы</h1>
+		<div className="{styles.questions}">
+			@for(f of faq; track $index) {
+			<dropdown [faq]="f"></dropdown>
+			}
+		</div>
+	</div>
+</div>

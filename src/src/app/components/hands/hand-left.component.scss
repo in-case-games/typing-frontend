@@ -1,0 +1,45 @@
+.hand {
+	position: relative;
+
+	.point {
+		position: absolute;
+
+		width: 15px;
+		height: 15px;
+
+		border-radius: 50%;
+	}
+
+	.point_finger_pinky,
+	.point_finger_ring,
+	.point_finger_middle,
+	.point_finger_index,
+	.point_finger_big {
+		background-color: red;
+	}
+
+	.point_finger_pinky {
+		top: 69px;
+		left: 8px;
+	}
+
+	.point_finger_ring {
+		top: 35px;
+		left: 36px;
+	}
+
+	.point_finger_middle {
+		top: 12px;
+		left: 83px;
+	}
+
+	.point_finger_index {
+		top: 36px;
+		left: 127px;
+	}
+
+	.point_finger_big {
+		bottom: 79px;
+		right: 20px;
+	}
+}

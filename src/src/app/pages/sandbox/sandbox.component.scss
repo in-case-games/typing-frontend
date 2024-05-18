@@ -1,0 +1,80 @@
+.container {
+	max-width: 1720px;
+
+	margin: 0 auto;
+	padding: 110px 40px 0 40px;
+}
+
+.lesson__wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	height: 100%;
+	width: 100%;
+
+	.hints__wrapper {
+		display: flex;
+		align-items: center;
+
+		margin-top: 50px;
+	}
+
+	typing-input-area {
+		flex: 1 0 auto;
+		position: relative;
+
+		height: 162px;
+		width: 100%;
+		max-width: 1024px;
+
+		text-align: center;
+		vertical-align: middle;
+		overflow: hidden;
+	}
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+
+	max-width: 1024px;
+	width: 1024px;
+	height: 55px;
+
+	font-family: 'RobotoMono';
+
+	.topic {
+		font-size: var(--lesson-item-topic-font-size);
+
+		margin: 0;
+	}
+
+	.counter {
+		position: absolute;
+		left: 10%;
+
+		font-size: var(--lesson-item-counter-font-size);
+
+		margin: 0;
+
+		transition: opacity var(--typing-start-blur-duration);
+	}
+}
+
+.tool_bar {
+	display: flex;
+	justify-content: space-evenly;
+
+	button {
+		font-size: 30px;
+		color: var(--main-font-color);
+
+		cursor: pointer;
+	}
+}
