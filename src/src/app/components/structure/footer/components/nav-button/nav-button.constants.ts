@@ -14,10 +14,10 @@ export class NavButtonConstants {
 		},
 		{
 			url: 'https://github.com/in-case-games',
-			signature: 'Наши проекты',
+			signature: 'Мои проекты',
 			image: {
 				src: 'assets/images/icons/setting.svg',
-				alt: 'Наши проекты',
+				alt: 'Мои проекты',
 				height: '25px',
 				width: '25px',
 			},
