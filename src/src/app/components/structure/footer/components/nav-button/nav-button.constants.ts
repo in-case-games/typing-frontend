@@ -3,7 +3,7 @@ import { NavButtonModel } from './nav-button.model';
 export class NavButtonConstants {
 	public static Models: NavButtonModel[] = [
 		{
-			url: 'https://t.me/x_DarkBull_x',
+			url: 'https://t.me/in_case_offers',
 			signature: 'Партнерам',
 			image: {
 				src: 'assets/images/icons/peoples.svg',
